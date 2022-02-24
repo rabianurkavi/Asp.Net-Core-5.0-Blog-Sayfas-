@@ -1,5 +1,5 @@
 ﻿using BusinessLayer.Concrete;
-using DataAccessLayer.Concrete.EntityFramework;
+using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace CoreDemo.Controllers
         BlogManager blogManager = new BlogManager(new EfBlogDal());
         public IActionResult Index()
         {
-            var values = blogManager.GetList();
+            var values = blogManager.GetBlogListWithCategory();
             return View(values);
         }
         

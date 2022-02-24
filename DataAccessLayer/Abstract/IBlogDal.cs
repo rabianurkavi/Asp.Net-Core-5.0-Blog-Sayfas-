@@ -9,5 +9,8 @@ namespace DataAccessLayer.Abstract
 {
     public interface IBlogDal:IGenericDal<Blog>
     {
+        
+        //Kategoriyle beraber listeleri getir.
+        List<Blog> GetListWithCategory();
     }
 }
