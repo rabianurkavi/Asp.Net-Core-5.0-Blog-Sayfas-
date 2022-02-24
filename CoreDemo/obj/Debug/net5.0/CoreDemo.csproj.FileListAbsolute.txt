@@ -153,3 +153,6 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\H
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\UserLayout.cshtml.g.cs
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Blog\Index.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Partial1.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Partial2.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Partial3.cshtml.g.cs
