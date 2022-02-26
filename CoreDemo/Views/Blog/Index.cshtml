@@ -40,12 +40,12 @@
                                     </li>
                                 </ul>
                                 <h5 class="card-title">
-                                    <a href="single.html">@item.BlogTitle</a>
+                                    <a href="/Blog/BlogReadAll/@item.BlogId/">@item.BlogTitle</a>
                                 </h5>
                                 <p class="card-text mb-3">@(item.BlogContent.Length > 150 ? item.BlogContent.Substring
                                                           (0, item.BlogContent.Substring(0,155).LastIndexOf(" "))+"..."
                                                            : item.BlogContent + "...") </p>
-                                <a href="/Blog/BlogDetails/@item.BlogId/" class="btn btn-primary read-m">Devamını Oku...</a>
+                                <a href="/Blog/BlogReadAll/@item.BlogId/" class="btn btn-primary read-m">Devamını Oku...</a>
                             </div>
                         </div>
                     }
