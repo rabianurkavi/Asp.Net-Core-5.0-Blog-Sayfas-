@@ -1,0 +1,2 @@
+# CoreDemo
+#HAZIRLIK AŞAMASINDA
