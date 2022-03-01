@@ -4,8 +4,7 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="zxx">
+
 <body>
     <!--//banner-->
     <section class="banner-bottom">
@@ -54,7 +53,7 @@
                         <a href="/Blog/Index/" class="btn btn-primary read-m">Blog Listesi</a>
                     </div>
                     }
-                    @await Component.InvokeAsync("CommentList")
+                    @await Component.InvokeAsync("CommentListByBlog",new { id = ViewBag.i })
                     @*@await Html.PartialAsync("~/Views/Comment/CommentListByBlog.cshtml")*@
                     @await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml")
                     
@@ -158,7 +157,7 @@
                             </div>
                         </div>
                         <div class="single-gd tech-btm">
-                            <h4>Recent Post</h4>
+                            <h4>Son eklenen post</h4>
                             <div class="blog-grids">
                                 <div class="blog-grid-left">
                                     <a href="single.html">
@@ -181,20 +180,8 @@
             </div>
         </div>
     </section>
-    <!--//main-->
-    <!--footer-->
-    
-    <!---->
-    <!-- js -->
-    <a href="#home" class="scroll" id="toTop" style="display: block;">
-        <span id="toTopHover" style="opacity: 1;"> </span>
-    </a>
-
-    <!-- //Custom-JavaScript-File-Links -->
-    <script src="js/bootstrap.js"></script>
-
 
 </body>
 
-</html>
+
 
