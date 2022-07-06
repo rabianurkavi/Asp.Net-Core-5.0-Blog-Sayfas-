@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -21,17 +23,30 @@ namespace CoreDemo.Controllers
         [HttpPost]
         public IActionResult Index(Writer writer,string passwordCoupling)
         {
-            if (writer.WriterPassword == passwordCoupling)
+            WriterValidator wv = new WriterValidator();
+            ValidationResult results = wv.Validate(writer);
+            if(results.IsValid)
             {
-                writer.WriterStatus = true;
-                writer.WriterAbout = "deneme test";
-                writerManager.WriterAdd(writer);
-                return RedirectToAction("Index", "Blog");
+                if (writer.WriterPassword == passwordCoupling)
+                {
+                    writer.WriterStatus = true;
+                    writer.WriterAbout = "deneme test";
+                    writerManager.WriterAdd(writer);
+                    return RedirectToAction("Index", "Blog");
+                }
+                else
+                {
+                    ModelState.AddModelError("WriterPassword", "Girdiğiniz şifreler eşleşmedi.Tekrar deneyin...");
+                }
             }
             else
             {
-                ModelState.AddModelError("WriterPassword", "Girdiğiniz şifreler eşleşmedi.Tekrar deneyin...");
+                foreach(var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
             }
+            
             return View();
                 
         }

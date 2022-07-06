@@ -50,6 +50,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Discord.Net.Core": {
+              "target": "Package",
+              "version": "[3.7.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.9, )"
@@ -131,6 +135,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Discord.Net.Core": {
+              "target": "Package",
+              "version": "[3.7.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -52,6 +52,20 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Discord.Net.Core": {
+              "target": "Package",
+              "version": "[3.7.2, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -123,6 +137,18 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Discord.Net.Core": {
+              "target": "Package",
+              "version": "[3.7.2, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.1.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.9, )"
@@ -216,6 +242,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Discord.Net.Core": {
+              "target": "Package",
+              "version": "[3.7.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.9, )"
@@ -297,6 +327,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Discord.Net.Core": {
+              "target": "Package",
+              "version": "[3.7.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
