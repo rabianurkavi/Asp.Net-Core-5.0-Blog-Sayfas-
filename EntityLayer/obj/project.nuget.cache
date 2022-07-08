@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "IxXqD4BqVxVUjnV1hIW1yDMlPFjra4XiU8nTRRXdvwXNQVgm2wmmqJgTsPR1VukJITZWmij0JpwO/qei18SFwg==",
+  "dgSpecHash": "qUBNbRE3r/U9J/OMkfyY/kYy7t56wctogS51VKR0vyAHyFcsPza6D71317C7MoAIASxq9mU+IiZZgK5akHoqoA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rabia Nur\\source\\repos\\CoreDemo\\EntityLayer\\EntityLayer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rabia Nur\\.nuget\\packages\\discord.net.core\\3.7.2\\discord.net.core.3.7.2.nupkg.sha512",
-    "C:\\Users\\Rabia Nur\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\Rabia Nur\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
-    "C:\\Users\\Rabia Nur\\.nuget\\packages\\system.interactive.async\\5.0.0\\system.interactive.async.5.0.0.nupkg.sha512",
-    "C:\\Users\\Rabia Nur\\.nuget\\packages\\system.linq.async\\5.0.0\\system.linq.async.5.0.0.nupkg.sha512",
-    "C:\\Users\\Rabia Nur\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+    "C:\\Users\\Rabia Nur\\.nuget\\packages\\discordrichpresence\\1.0.175\\discordrichpresence.1.0.175.nupkg.sha512",
+    "C:\\Users\\Rabia Nur\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Rabia Nur\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Rabia Nur\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Rabia Nur\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\Rabia Nur\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

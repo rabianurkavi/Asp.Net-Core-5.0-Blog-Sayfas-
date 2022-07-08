@@ -53,9 +53,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Discord.Net.Core": {
+            "DiscordRichPresence": {
               "target": "Package",
-              "version": "[3.7.2, )"
+              "version": "[1.0.175, )"
             },
             "FluentValidation": {
               "target": "Package",
@@ -137,9 +137,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Discord.Net.Core": {
+            "DiscordRichPresence": {
               "target": "Package",
-              "version": "[3.7.2, )"
+              "version": "[1.0.175, )"
             },
             "FluentValidation": {
               "target": "Package",
@@ -242,9 +242,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Discord.Net.Core": {
+            "DiscordRichPresence": {
               "target": "Package",
-              "version": "[3.7.2, )"
+              "version": "[1.0.175, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -328,9 +328,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Discord.Net.Core": {
+            "DiscordRichPresence": {
               "target": "Package",
-              "version": "[3.7.2, )"
+              "version": "[1.0.175, )"
             }
           },
           "imports": [

@@ -2,19 +2,17 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Discord.Net.Core/3.7.2": {
+      "DiscordRichPresence/1.0.175": {
         "type": "package",
         "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
-          "System.Collections.Immutable": "5.0.0",
-          "System.Interactive.Async": "5.0.0",
-          "System.ValueTuple": "4.5.0"
+          "Microsoft.Win32.Registry": "4.5.0",
+          "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
-          "lib/net5.0/Discord.Net.Core.dll": {}
+          "lib/netstandard2.0/DiscordRPC.dll": {}
         },
         "runtime": {
-          "lib/net5.0/Discord.Net.Core.dll": {}
+          "lib/netstandard2.0/DiscordRPC.dll": {}
         }
       },
       "FluentValidation/11.1.0": {
@@ -410,7 +408,7 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
@@ -444,7 +442,7 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -730,18 +728,6 @@
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
         }
       },
-      "System.Interactive.Async/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Linq.Async": "5.0.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/System.Interactive.Async.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/System.Interactive.Async.dll": {}
-        }
-      },
       "System.IO/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -797,15 +783,6 @@
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.dll": {}
-        }
-      },
-      "System.Linq.Async/5.0.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp3.1/System.Linq.Async.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/System.Linq.Async.dll": {}
         }
       },
       "System.Net.NameResolution/4.3.0": {
@@ -1119,7 +1096,7 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.AccessControl.dll": {}
@@ -1195,7 +1172,7 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
@@ -1328,15 +1305,6 @@
           "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
       "System.Windows.Extensions/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -1457,7 +1425,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Discord.Net.Core": "3.7.2",
+          "DiscordRichPresence": "1.0.175",
           "EntityLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9"
@@ -1473,7 +1441,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Discord.Net.Core": "3.7.2"
+          "DiscordRichPresence": "1.0.175"
         },
         "compile": {
           "bin/placeholder/EntityLayer.dll": {}
@@ -1485,26 +1453,21 @@
     }
   },
   "libraries": {
-    "Discord.Net.Core/3.7.2": {
-      "sha512": "apwswc6LjN4dj3u27SO3Hr56Jzl91wzReahieoD7IQhV+BJQaRxhTRiEEWFTrBzHfeFHEOQ7r6vZnra3zeFhKA==",
+    "DiscordRichPresence/1.0.175": {
+      "sha512": "qSWobPTbvHh9gOoBYT8C8eUhKtVdBI/WvW7GY9lNMEtsZIpL6nxCvYJwjsGL3dqlEAGY5k0vdq+wnuDLVBSV2w==",
       "type": "package",
-      "path": "discord.net.core/3.7.2",
+      "path": "discordrichpresence/1.0.175",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "PackageLogo.png",
-        "discord.net.core.3.7.2.nupkg.sha512",
-        "discord.net.core.nuspec",
-        "lib/net461/Discord.Net.Core.dll",
-        "lib/net461/Discord.Net.Core.xml",
-        "lib/net5.0/Discord.Net.Core.dll",
-        "lib/net5.0/Discord.Net.Core.xml",
-        "lib/net6.0/Discord.Net.Core.dll",
-        "lib/net6.0/Discord.Net.Core.xml",
-        "lib/netstandard2.0/Discord.Net.Core.dll",
-        "lib/netstandard2.0/Discord.Net.Core.xml",
-        "lib/netstandard2.1/Discord.Net.Core.dll",
-        "lib/netstandard2.1/Discord.Net.Core.xml"
+        "discordrichpresence.1.0.175.nupkg.sha512",
+        "discordrichpresence.nuspec",
+        "lib/net35/DiscordRPC.dll",
+        "lib/net35/DiscordRPC.pdb",
+        "lib/net35/DiscordRPC.xml",
+        "lib/netstandard2.0/DiscordRPC.dll",
+        "lib/netstandard2.0/DiscordRPC.pdb",
+        "lib/netstandard2.0/DiscordRPC.xml"
       ]
     },
     "FluentValidation/11.1.0": {
@@ -2226,10 +2189,10 @@
         "version.txt"
       ]
     },
-    "Newtonsoft.Json/13.0.1": {
-      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
-      "path": "newtonsoft.json/13.0.1",
+      "path": "newtonsoft.json/12.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2248,9 +2211,12 @@
         "lib/netstandard1.3/Newtonsoft.Json.xml",
         "lib/netstandard2.0/Newtonsoft.Json.dll",
         "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.1.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "packageIcon.png"
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -3183,25 +3149,6 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-    "System.Interactive.Async/5.0.0": {
-      "sha512": "QaqhQVDiULcu4vm6o89+iP329HcK44cETHOYgy/jfEjtzeFy0ZxmuM7nel9ocjnKxEM4yh1mli7hgh8Q9o+/Iw==",
-      "type": "package",
-      "path": "system.interactive.async/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net461/System.Interactive.Async.dll",
-        "lib/net461/System.Interactive.Async.xml",
-        "lib/netcoreapp3.1/System.Interactive.Async.dll",
-        "lib/netcoreapp3.1/System.Interactive.Async.xml",
-        "lib/netstandard2.0/System.Interactive.Async.dll",
-        "lib/netstandard2.0/System.Interactive.Async.xml",
-        "lib/netstandard2.1/System.Interactive.Async.dll",
-        "lib/netstandard2.1/System.Interactive.Async.xml",
-        "system.interactive.async.5.0.0.nupkg.sha512",
-        "system.interactive.async.nuspec"
-      ]
-    },
     "System.IO/4.3.0": {
       "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "type": "package",
@@ -3430,33 +3377,6 @@
         "ref/xamarinwatchos10/_._",
         "system.linq.4.3.0.nupkg.sha512",
         "system.linq.nuspec"
-      ]
-    },
-    "System.Linq.Async/5.0.0": {
-      "sha512": "cPtIuuH8TIjVHSi2ewwReWGW1PfChPE0LxPIDlfwVcLuTM9GANFTXiMB7k3aC4sk3f0cQU25LNKzx+jZMxijqw==",
-      "type": "package",
-      "path": "system.linq.async/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net461/System.Linq.Async.dll",
-        "lib/net461/System.Linq.Async.xml",
-        "lib/netcoreapp3.1/System.Linq.Async.dll",
-        "lib/netcoreapp3.1/System.Linq.Async.xml",
-        "lib/netstandard2.0/System.Linq.Async.dll",
-        "lib/netstandard2.0/System.Linq.Async.xml",
-        "lib/netstandard2.1/System.Linq.Async.dll",
-        "lib/netstandard2.1/System.Linq.Async.xml",
-        "ref/net461/System.Linq.Async.dll",
-        "ref/net461/System.Linq.Async.xml",
-        "ref/netcoreapp3.1/System.Linq.Async.dll",
-        "ref/netcoreapp3.1/System.Linq.Async.xml",
-        "ref/netstandard2.0/System.Linq.Async.dll",
-        "ref/netstandard2.0/System.Linq.Async.xml",
-        "ref/netstandard2.1/System.Linq.Async.dll",
-        "ref/netstandard2.1/System.Linq.Async.xml",
-        "system.linq.async.5.0.0.nupkg.sha512",
-        "system.linq.async.nuspec"
       ]
     },
     "System.Net.NameResolution/4.3.0": {
@@ -5264,50 +5184,6 @@
         "system.threading.tasks.extensions.nuspec"
       ]
     },
-    "System.ValueTuple/4.5.0": {
-      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
-      "type": "package",
-      "path": "system.valuetuple/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.ValueTuple.dll",
-        "lib/net461/System.ValueTuple.xml",
-        "lib/net47/System.ValueTuple.dll",
-        "lib/net47/System.ValueTuple.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/netstandard1.0/System.ValueTuple.xml",
-        "lib/netstandard2.0/_._",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
-        "lib/uap10.0.16299/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.ValueTuple.dll",
-        "ref/net47/System.ValueTuple.dll",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard2.0/_._",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "ref/uap10.0.16299/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.valuetuple.4.5.0.nupkg.sha512",
-        "system.valuetuple.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "System.Windows.Extensions/4.7.0": {
       "sha512": "CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "type": "package",
@@ -5595,7 +5471,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "DataAccessLayer >= 1.0.0",
-      "Discord.Net.Core >= 3.7.2",
+      "DiscordRichPresence >= 1.0.175",
       "EntityLayer >= 1.0.0",
       "FluentValidation >= 11.1.0",
       "FluentValidation.AspNetCore >= 11.1.2"
@@ -5655,9 +5531,9 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Discord.Net.Core": {
+          "DiscordRichPresence": {
             "target": "Package",
-            "version": "[3.7.2, )"
+            "version": "[1.0.175, )"
           },
           "FluentValidation": {
             "target": "Package",
