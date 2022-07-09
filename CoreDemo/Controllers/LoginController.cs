@@ -1,11 +1,13 @@
 ﻿using DataAccessLayer.Concrete.Context;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace CoreDemo.Controllers
@@ -20,19 +22,36 @@ namespace CoreDemo.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult Index(Writer writer)
+        public async Task<ActionResult> Index(Writer writer)
         {
             Context context = new Context();
-            var dataValue = context.Writers.FirstOrDefault(x=>x.WriterMail==writer.WriterMail && x.WriterPassword== writer.WriterPassword);
-            if (dataValue != null)
+            var dataValue = context.Writers.FirstOrDefault(x => x.WriterMail == writer.WriterMail && x.WriterPassword == writer.WriterPassword);
+            if(dataValue!=null)
             {
-                HttpContext.Session.SetString("username", writer.WriterMail);
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name,writer.WriterMail)
+                };
+                var useridentity = new ClaimsIdentity(claims, "a");
+                ClaimsPrincipal principal = new ClaimsPrincipal(useridentity);
+                await HttpContext.SignInAsync(principal);
                 return RedirectToAction("Index", "Writer");
             }
             else
             {
                 return View();
             }
+            //Context context = new Context();
+            //var dataValue = context.Writers.FirstOrDefault(x=>x.WriterMail==writer.WriterMail && x.WriterPassword== writer.WriterPassword);
+            //if (dataValue != null)
+            //{
+            //    HttpContext.Session.SetString("username", writer.WriterMail);
+            //    return RedirectToAction("Index", "Writer");
+            //}
+            //else
+            //{
+            //    return View();
+            //}
         }
     }
 }
