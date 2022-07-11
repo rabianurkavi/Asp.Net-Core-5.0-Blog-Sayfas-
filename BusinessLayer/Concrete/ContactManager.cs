@@ -9,28 +9,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class ContactManager : IContactService
+    public class ContactManager : IGenericService<Contact>
     {
         IContactDal _contactDal;
         public ContactManager(IContactDal contactDal)
         {
             _contactDal = contactDal;
         }
-        public void ContactAdd(Contact contact)
-        {
-            _contactDal.Insert(contact);
-        }
-
-        public void ContacttDelete(Contact contact)
-        {
-            _contactDal.Delete(contact);
-        }
-
-        public void ContactUpdate(Contact contact)
-        {
-            _contactDal.Update(contact);
-        }
-
         public Contact GetById(int id)
         {
             return _contactDal.Get(x => x.ContactId == id);
@@ -39,6 +24,21 @@ namespace BusinessLayer.Concrete
         public List<Contact> GetList()
         {
             return _contactDal.List();
+        }
+
+        public void TAdd(Contact t)
+        {
+            _contactDal.Insert(t);
+        }
+
+        public void TDelete(Contact t)
+        {
+            _contactDal.Delete(t);
+        }
+
+        public void TUpdate(Contact t)
+        {
+            _contactDal.Update(t);
         }
     }
 }

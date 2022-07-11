@@ -9,28 +9,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class AboutManager : IAboutService
+    public class AboutManager : IGenericService<About>
     {
         IAboutDal _aboutDal;
         public AboutManager(IAboutDal aboutDal)
         {
             _aboutDal = aboutDal;
         }
-        public void AboutAdd(About about)
-        {
-            _aboutDal.Insert(about);
-        }
-
-        public void AboutDelete(About about)
-        {
-            _aboutDal.Delete(about);
-        }
-
-        public void AboutUpdate(About about)
-        {
-            _aboutDal.Update(about);
-        }
-
         public About GetById(int id)
         {
             return _aboutDal.Get(x => x.AboutId == id);
@@ -39,6 +24,21 @@ namespace BusinessLayer.Concrete
         public List<About> GetList()
         {
             return _aboutDal.List();
+        }
+
+        public void TAdd(About t)
+        {
+            _aboutDal.Insert(t);
+        }
+
+        public void TDelete(About t)
+        {
+            _aboutDal.Delete(t);
+        }
+
+        public void TUpdate(About t)
+        {
+            _aboutDal.Update(t);
         }
     }
 }

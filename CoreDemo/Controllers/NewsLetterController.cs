@@ -22,7 +22,7 @@ namespace CoreDemo.Controllers
         public PartialViewResult SubcribeMail(NewsLetter newsLetter)
         {
             newsLetter.MailStatus = true;
-            newsLetterManager.AddNewsLetter(newsLetter);
+            newsLetterManager.TAdd(newsLetter);
             return PartialView();
         }
     }
