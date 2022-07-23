@@ -12,5 +12,6 @@ namespace DataAccessLayer.Abstract
         
         //Kategoriyle beraber listeleri getir.
         List<Blog> GetListWithCategory();
+        List<Blog> GetListWithCategoryByWriter(int id);
     }
 }
