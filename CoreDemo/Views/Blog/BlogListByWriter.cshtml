@@ -25,7 +25,7 @@
             <td>@item.Category.CategoryName</td>
             <td>@item.BlogStatus</td>
             <td><a href="/Blog/BlogDelete/@item.BlogId" onclick="return confirm('Bloğu silmek üzeresiniz.');" class="btn btn-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-warning">Düzenle</a></td>
+            <td><a href="/Blog/EditBlog/@item.BlogId" class="btn btn-warning">Düzenle</a></td>
         </tr>
     }
 </table>
