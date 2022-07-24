@@ -59,6 +59,7 @@ namespace CoreDemo.Controllers
                 blog.WriterId = 1;
                 blogManager.TAdd(blog);
                 return RedirectToAction("BlogListByWriter", "Blog");
+               
 
 
             }
@@ -70,6 +71,12 @@ namespace CoreDemo.Controllers
                 }
             }
             return View();
+        }
+        public IActionResult BlogDelete(int id)
+        {
+            var blogValue = blogManager.GetById(id);
+            blogManager.TDelete(blogValue);
+            return RedirectToAction("BlogListByWriter", "Blog");
         }
 
     }
