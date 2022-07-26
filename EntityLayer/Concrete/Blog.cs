@@ -23,5 +23,6 @@ namespace EntityLayer.Concrete
         public int WriterId { get; set; }
         public Writer Writer { get; set; }
         public List<Comment> Comments { get; set; }
+        public List<BlogRayting> BlogRaytings { get; set; }
     }
 }

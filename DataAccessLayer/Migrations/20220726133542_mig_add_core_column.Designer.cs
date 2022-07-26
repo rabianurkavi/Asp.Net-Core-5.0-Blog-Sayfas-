@@ -4,14 +4,16 @@ using DataAccessLayer.Concrete.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220726133542_mig_add_core_column")]
+    partial class mig_add_core_column
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,29 +89,6 @@ namespace DataAccessLayer.Migrations
                     b.HasIndex("WriterId");
 
                     b.ToTable("Blogs");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.BlogRayting", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("BlogID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BlogRaytingCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BlogTotalScore")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("BlogID");
-
-                    b.ToTable("BlogRaytings");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
@@ -265,17 +244,6 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("Writer");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.BlogRayting", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Blog", "Blog")
-                        .WithMany("BlogRaytings")
-                        .HasForeignKey("BlogID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Blog");
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Blog", "Blogs")
@@ -289,8 +257,6 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
                 {
-                    b.Navigation("BlogRaytings");
-
                     b.Navigation("Comments");
                 });
 
