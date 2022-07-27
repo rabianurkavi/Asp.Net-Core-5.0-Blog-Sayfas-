@@ -28,7 +28,31 @@
                                     </td>
 
                                     <td>
-                                        <label class="badge badge-gradient-success">@item.Category.CategoryName</label>
+                                        @if (item.CategoryId == 1)
+                                        {
+                                            <label class="badge badge-gradient-success">@item.Category.CategoryName</label>
+                                        }
+                                        @if (item.CategoryId == 2)
+                                        {
+                                            <label class="badge badge-gradient-info">@item.Category.CategoryName</label>
+                                        }
+                                        @if (item.CategoryId == 3)
+                                        {
+                                            <label class="badge badge-gradient-light">@item.Category.CategoryName</label>
+                                        }
+                                        @if (item.CategoryId == 4)
+                                        {
+                                            <label class="badge badge-gradient-primary">@item.Category.CategoryName</label>
+                                        }
+                                        @if (item.CategoryId == 6)
+                                        {
+                                            <label class="badge badge-gradient-warning">@item.Category.CategoryName</label>
+                                        }
+                                        @if (item.CategoryId == 8)
+                                        {
+                                            <label class="badge badge-gradient-info">@item.Category.CategoryName</label>
+                                        }
+
                                     </td>
                                     <td> @(((DateTime)item.BlogCreateDate).ToString("dd-MMMM-yyyy")) </td>
                                     <td>
