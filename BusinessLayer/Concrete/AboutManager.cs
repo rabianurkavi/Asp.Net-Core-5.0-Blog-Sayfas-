@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class AboutManager : IGenericService<About>
+    public class AboutManager : IAboutService
     {
         IAboutDal _aboutDal;
         public AboutManager(IAboutDal aboutDal)

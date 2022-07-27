@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class BlogManager : IGenericService<Blog>
+    public class BlogManager : IBlogService
     {
 
         IBlogDal _blogDal;

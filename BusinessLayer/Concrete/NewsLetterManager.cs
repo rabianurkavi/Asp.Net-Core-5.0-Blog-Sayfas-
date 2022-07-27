@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class NewsLetterManager : IGenericService<NewsLetter>
+    public class NewsLetterManager : INewsLetterService
     {
         INewsLetterDal _newsLetterDal;
         public NewsLetterManager(INewsLetterDal newsLetterDal)

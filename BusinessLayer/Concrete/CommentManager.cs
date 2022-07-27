@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class CommentManager : IGenericService<Comment>
+    public class CommentManager : ICommentService
     {
         ICommentDal _commentDal;
         public CommentManager(ICommentDal commentDal)
