@@ -38,11 +38,11 @@ namespace DataAccessLayer.Concrete.Context
                 .WithMany(y => y.WriterReceiver)
                 .HasForeignKey(z => z.ReceiverID)
                 .OnDelete(DeleteBehavior.ClientSetNull);
-            //HomeMatches-->WriterSender
-            //AwayMatches-->WriterReceiver
+            // HomeMatches-- > WriterSender
+            //AwayMatches-- > WriterReceiver
 
-            //HomeTeam-->SenderUser
-            //GuestTeam-->ReceiverUser
+            //HomeTeam-- > SenderUser
+            //GuestTeam-- > ReceiverUser
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
@@ -53,9 +53,9 @@ namespace DataAccessLayer.Concrete.Context
         public DbSet<NewsLetter> NewsLetters { get; set; }
         public DbSet<BlogRayting> BlogRaytings { get; set; }
         public DbSet<Notification> Notifications { get; set; }
-        public DbSet<Message> Messages { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Match> Matches { get; set; }
+        public DbSet<Message> Messages { get; set; }
         public DbSet<Message2> Message2s { get; set; }
     }
 }
