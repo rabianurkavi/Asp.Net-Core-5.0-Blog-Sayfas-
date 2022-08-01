@@ -194,3 +194,4 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\S
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterAboutOnDashboard\Default.cshtml.g.cs
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Writer\WriterEditProfile.cshtml.g.cs
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Writer\WriterAdd.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Notification\AllNotification.cshtml.g.cs
