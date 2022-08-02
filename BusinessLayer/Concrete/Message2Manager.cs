@@ -28,7 +28,7 @@ namespace BusinessLayer.Concrete
 
         public List<Message2> GetInboxListWriter(int id)
         {
-            return _messageDal.List(x => x.ReceiverID == id);
+            return _messageDal.GetListWithMessageByWriter(id);
         }
 
         public void TAdd(Message2 t)
@@ -44,6 +44,11 @@ namespace BusinessLayer.Concrete
         public void TUpdate(Message2 t)
         {
             _messageDal.Update(t);
+        }
+
+        public List<Message2> GetInboxListByWriter(int id)
+        {
+            return _messageDal.GetListWithMessageByWriter(id);
         }
     }
 }
