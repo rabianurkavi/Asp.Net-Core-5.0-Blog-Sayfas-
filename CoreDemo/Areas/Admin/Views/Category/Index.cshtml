@@ -11,24 +11,31 @@
     <tr>
         <th>#</th>
         <th>Kategori Adı</th>
-        <th>Pasif Yap</th>
-        <th>Aktif Yap</th>
+        <th>Status Durumu</th>
+        <th>Değişiklikler</th>
     </tr>
 
     @foreach (var item in Model)
     {
 
-        <tr>
-            <th>@item.CategoryId</th>
-            <td>@item.CategoryName</td>
-            <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
-            <td><a href="#" class="btn btn-success">Aktif Yap</a></td>
-            <td><a href="#" class="btn btn-warning">Düzenle</a></td>
-        </tr>
+<tr>
+    <th>@item.CategoryId</th>
+    <td>@item.CategoryName</td>
+    @if (item.CategoryStatus==false)
+    {
+        <td><a href="/Admin/Category/CategoryStatusChange/@item.CategoryId" class="btn btn-primary">Aktif Yap</a></td>
+    }
+    else
+    {
+        <td><a href="/Admin/Category/CategoryStatusChange/@item.CategoryId" class="btn btn-danger">Pasif Yap</a></td>
+    }
+
+    <td><a href="/Admin/Category/CategoryUpdate/@item.CategoryId" class="btn btn-warning">Düzenle</a></td>
+</tr>
 
     }
 </table>
-<a href="/Admin/CategoryAdd" class="btn btn-primary">Yeni Kategori</a>
+<a href="/Admin/Category/CategoryAdd" class="btn btn-primary">Yeni Kategori</a>
 <br/>
 @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
 
