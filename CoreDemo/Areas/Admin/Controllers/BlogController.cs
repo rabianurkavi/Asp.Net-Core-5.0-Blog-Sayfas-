@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace CoreDemo.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class BlogController : Controller
     {
+        
         public IActionResult ExportStaticExcelBlogList()
         {
             using (var workbook = new XLWorkbook())
@@ -31,10 +33,10 @@ namespace CoreDemo.Areas.Admin.Controllers
                 {
                     workbook.SaveAs(stream);
                     var content = stream.ToArray();
-                    return File(content,"application / vnd.openxmlformats - officedocument.spreadsheetml.sheet","Calisma1.xlsx");
+                    return File(content,"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","Calisma1.xlsx");
                 }
             }
-                return View();
+              
         }
         public List<BlogModel> GetBlogList()
         {
@@ -45,6 +47,10 @@ namespace CoreDemo.Areas.Admin.Controllers
                 new BlogModel{BlogId=3,BlogName="Türkiye voleybolda kaçıncı sırada?"}
             };
             return bm;
+        }
+        public IActionResult BlogListExcel()
+        {
+            return View();
         }
     }
 }

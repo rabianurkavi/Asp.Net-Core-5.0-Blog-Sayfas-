@@ -81,22 +81,17 @@ namespace CoreDemo.Areas.Admin.Controllers
         }
         public IActionResult CategoryStatusChange(int id)
         {
-            
-            var value = categoryManager.GetById(id);
-           
-            if (value.CategoryStatus==true)
-            {
-                value.CategoryStatus = false;
+            var isExities = categoryManager.GetById(id);
+
+            if (isExities == null)
                 return RedirectToAction("Index", "Category");
-                //var durum = value.CategoryStatus;
-            }
+
+            if (isExities.CategoryStatus == true)
+                categoryManager.UpdateRecordState(isExities.CategoryId, false);
             else
-            {
-                value.CategoryStatus = true;
-                return RedirectToAction("Index", "Category");
-            }
+                categoryManager.UpdateRecordState(isExities.CategoryId, true);
+
+            return RedirectToAction("Index", "Category");
         }
-
-
     }
 }
