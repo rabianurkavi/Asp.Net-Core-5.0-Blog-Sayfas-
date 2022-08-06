@@ -212,3 +212,5 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\ExcelNumberFo
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\System.IO.Packaging.dll
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\BlogListExcel.cshtml.g.cs
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\BlogTitleListExcel.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Widget\Index.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\Components\Statistic1\Default.cshtml.g.cs
