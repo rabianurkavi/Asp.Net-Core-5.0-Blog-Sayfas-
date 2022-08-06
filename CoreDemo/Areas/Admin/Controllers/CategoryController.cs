@@ -82,17 +82,17 @@ namespace CoreDemo.Areas.Admin.Controllers
         public IActionResult CategoryStatusChange(int id)
         {
             
-            var values = categoryManager.GetById(id);
+            var value = categoryManager.GetById(id);
            
-            if (values.CategoryStatus==true)
-            { 
-                values.CategoryStatus = false;
+            if (value.CategoryStatus==true)
+            {
+                value.CategoryStatus = false;
                 return RedirectToAction("Index", "Category");
-                var durum = values.CategoryStatus;
+                //var durum = value.CategoryStatus;
             }
             else
             {
-                values.CategoryStatus = true;
+                value.CategoryStatus = true;
                 return RedirectToAction("Index", "Category");
             }
         }

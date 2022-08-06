@@ -23,11 +23,11 @@
     <td>@item.CategoryName</td>
     @if (item.CategoryStatus==false)
     {
-        <td><a href="/Admin/Category/CategoryStatusChange/@item.CategoryId" class="btn btn-primary">Aktif Yap</a></td>
+        <td><a href="/Admin/Category/CategoryStatusChange/@item.CategoryId" id="DeleteBtn" onclick="return confirm('Aktif yapmak istediğinize emin misiniz?');" class="btn btn-primary">Aktif Yap</a></td>
     }
     else
     {
-        <td><a href="/Admin/Category/CategoryStatusChange/@item.CategoryId" class="btn btn-danger">Pasif Yap</a></td>
+        <td><a href="/Admin/Category/CategoryStatusChange/@item.CategoryId" id="DeleteBtn" onclick="return confirm('Pasif yapmak istediğinize emin misiniz?');" class="btn btn-danger">Pasif Yap</a></td>
     }
 
     <td><a href="/Admin/Category/CategoryUpdate/@item.CategoryId" class="btn btn-warning">Düzenle</a></td>
