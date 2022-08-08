@@ -1,4 +1,6 @@
-﻿using CoreDemo.Areas.Admin.Models;
+﻿using BusinessLayer.Concrete;
+using CoreDemo.Areas.Admin.Models;
+using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -11,14 +13,24 @@ namespace CoreDemo.Areas.Admin.Controllers
     [Area("Admin")]
     public class WriterController : Controller
     {
+        WriterManager writerManager = new WriterManager(new EfWriterDal());
         public IActionResult Index()
         {
             return View();
         }
+        public IActionResult GetWriterById(int writerid)
+        {
+            //var findwriters = writers.FirstOrDefault(x => x.WriterId == writerid);
+            var findwriter = writerManager.GetById(writerid);
+            var jsonWriters = JsonConvert.SerializeObject(findwriter);
+            return Json(jsonWriters);
+        }
         public IActionResult WriterList()
         {
+            var jsonW = writerManager.GetList();
+            var jsonWriters2= JsonConvert.SerializeObject(jsonW);
             var jsonWriters = JsonConvert.SerializeObject(writers);//json formatına çevirmek
-            return Json(jsonWriters);
+            return Json(jsonWriters2);
         }
         public static List<WriterModel> writers = new List<WriterModel>
         {
