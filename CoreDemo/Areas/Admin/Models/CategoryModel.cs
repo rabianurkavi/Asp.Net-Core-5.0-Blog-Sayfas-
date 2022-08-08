@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace CoreDemo.Areas.Admin.Models
 {
-    public class CategoryClass
+    public class CategoryModel
     {
-        public int CategoryCount { get; set; }
-        public string CategoryName { get; set; }
+        public int categorycount { get; set; }
+        public string categoryname { get; set; }
     }
 }

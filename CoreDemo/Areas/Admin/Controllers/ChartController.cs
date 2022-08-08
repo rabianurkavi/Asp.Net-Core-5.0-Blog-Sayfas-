@@ -14,26 +14,25 @@ namespace CoreDemo.Areas.Admin.Controllers
         {
             return View();
         }
-
         public IActionResult CategoryChart()
         {
-            List<CategoryClass> list = new List<CategoryClass>();
-            list.Add(new CategoryClass
+            List<CategoryModel> list = new List<CategoryModel>();
+            list.Add(new CategoryModel
             {
-                CategoryName = "Teknoloji",
-                CategoryCount = 10
+                categoryname = "Teknoloji",
+                categorycount = 14
             });
-            list.Add(new CategoryClass
+            list.Add(new CategoryModel
             {
-                CategoryName = "Yazılım",
-                CategoryCount = 20
+                categoryname = "Yazılım",
+                categorycount = 5
             });
-            list.Add(new CategoryClass
+            list.Add(new CategoryModel
             {
-                CategoryName = "Spor",
-                CategoryCount = 5
+                categoryname = "Spor",
+                categorycount = 2
             });
-            return Json(new { jsonList = list });
+            return Json(new { jsonlist = list });
         }
     }
 }
