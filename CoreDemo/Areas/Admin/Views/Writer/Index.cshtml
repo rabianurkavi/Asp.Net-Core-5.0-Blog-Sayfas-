@@ -20,7 +20,16 @@
                 type: "Get",
                 url: "/Admin/Writer/WriterList/",
                 success: function (func) {
-                    console.log(func);
+                    let w = jQuery.parseJSON(func);
+                    console.log(w);
+                    //yazarların tabloda görüntülenmesi
+                    console.log(w);
+                    let tableHtml = "<table class=table table-bordered> <tr><th>Yazar ID </th> <th> Yazar Adı </th> </tr>";
+                    $.each(w, (index, value) => {
+                        tableHtml += `<tr><td>${value.WriterId}</td> <td>${value.WriterName}</td></tr>`
+                    });
+                    tableHtml += "</table>";
+                    $("#writerlist").html(tableHtml);
                 }
             });
         });

@@ -17,7 +17,7 @@ namespace CoreDemo.Areas.Admin.Controllers
         }
         public IActionResult WriterList()
         {
-            var jsonWriters = JsonConvert.SerializeObject(writers);
+            var jsonWriters = JsonConvert.SerializeObject(writers);//json formatına çevirmek
             return Json(jsonWriters);
         }
         public static List<WriterModel> writers = new List<WriterModel>
