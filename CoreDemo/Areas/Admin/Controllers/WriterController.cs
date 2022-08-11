@@ -42,6 +42,12 @@ namespace CoreDemo.Areas.Admin.Controllers
             var jsonWriters = JsonConvert.SerializeObject(writer);
             return Json(jsonWriters);
         }
+        public IActionResult DeleteWriter(int id)
+        {
+            var writer = writerManager.GetById(id);
+            writerManager.TDelete(writer);
+            return Json(writer);
+        }
 
         public static List<WriterModel> writers = new List<WriterModel>
         {

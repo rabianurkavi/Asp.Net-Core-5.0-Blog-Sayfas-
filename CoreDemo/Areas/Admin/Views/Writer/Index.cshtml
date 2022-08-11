@@ -8,7 +8,8 @@
 <br />
 <button type="button" id="btngetlist" class="btn btn-outline-primary">Yazar Listesi</button>
 <button type="button" id="btngetbyid" class="btn btn-outline-success">Yazar Getir</button>
-<button type="button" id="btnaddwriter" class="btn btn-outline-info">Yazar Getir</button>
+<button type="button" id="btnaddwriter" class="btn btn-outline-info">Yazar Ekle</button>
+<button type="button" id="btndeletewriter" class="btn btn-outline-danger">Yazar Sil</button>
 <br />
 <br />
 <div id="writerlist">
@@ -33,8 +34,10 @@
     <input type="text" class="form-control" id="txtwritermail" placeholder="Yazarın Mailini Giriniz" />
     <br />
     <input type="text" class="form-control" id="txtwriterpasswrod" placeholder="Yazarın Şifresini Giriniz" />
-    <br />
-    
+    <br />   
+</div>
+<div>
+    <input type="text" class="form-control" id="txtid" placeholder="Silenecek yazar Idsini girin" />
 </div>
 @section scripts{
     <script>
@@ -76,6 +79,7 @@
                 }
             });
         });
+
         $("#btnaddwriter").click(function () {
             let writer = {
                 WriterName: $("#txtwritername").val(),
@@ -93,6 +97,18 @@
                 success: function (func) {
                     let result = jQuery.parseJSON(func);
                     alert("Yazar ekleme işlemi başarılı bir şekilde gerçekleşti.");
+                }
+            });
+        });
+
+        $("#btndeletewriter").click(x => {
+            let id = $("#txtid").val();
+            $.ajax({
+                url: "/Admin/Writer/DeleteWriter/" + id,
+                type: "post",
+                dataType: "json",
+                success: function (func) {
+                    alert("Yazar silme işlemi başarılı bir şekilde gerçekleşti.");
                 }
             });
         });
