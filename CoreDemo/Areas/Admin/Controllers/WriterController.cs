@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EntityLayer.Concrete;
 
 namespace CoreDemo.Areas.Admin.Controllers
 {
@@ -29,9 +30,19 @@ namespace CoreDemo.Areas.Admin.Controllers
         {
             var jsonW = writerManager.GetList();
             var jsonWriters2= JsonConvert.SerializeObject(jsonW);
-            var jsonWriters = JsonConvert.SerializeObject(writers);//json formatına çevirmek
+           //var jsonWriters = JsonConvert.SerializeObject(writers);//json formatına çevirmek
             return Json(jsonWriters2);
         }
+        [HttpPost]
+        public IActionResult AddWriter(Writer writer)
+        {
+            writer.WriterStatus = true;
+            writerManager.TAdd(writer);
+            //writerManager.TAdd(writer);
+            var jsonWriters = JsonConvert.SerializeObject(writer);
+            return Json(jsonWriters);
+        }
+
         public static List<WriterModel> writers = new List<WriterModel>
         {
             new WriterModel
