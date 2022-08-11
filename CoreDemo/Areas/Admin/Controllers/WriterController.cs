@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EntityLayer.Concrete;
+using DataAccessLayer.Concrete.Context;
 
 namespace CoreDemo.Areas.Admin.Controllers
 {
@@ -48,7 +49,22 @@ namespace CoreDemo.Areas.Admin.Controllers
             writerManager.TDelete(writer);
             return Json(writer);
         }
+        public IActionResult UpdateWriter(Writer writer)
+        {
+            //Context context = new Context();
+            //var writers = context.Writers.FirstOrDefault(x => x.WriterId == writer.WriterId);
+            var writers = writerManager.GetById(writer.WriterId);
+            writers.WriterName = writer.WriterName;
+            writers.WriterAbout = writer.WriterAbout;
+            writers.WriterImage = writer.WriterImage;
+            writers.WriterMail = writer.WriterMail;
+            writers.WriterPassword = writer.WriterPassword;
+            writers.WriterStatus = true;
+            writerManager.TUpdate(writers);
+            var jsonWriter = JsonConvert.SerializeObject(writer);
+            return Json(jsonWriter);
 
+        }
         public static List<WriterModel> writers = new List<WriterModel>
         {
             new WriterModel

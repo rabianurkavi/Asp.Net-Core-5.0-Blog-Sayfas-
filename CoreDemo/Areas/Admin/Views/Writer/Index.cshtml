@@ -10,6 +10,7 @@
 <button type="button" id="btngetbyid" class="btn btn-outline-success">Yazar Getir</button>
 <button type="button" id="btnaddwriter" class="btn btn-outline-info">Yazar Ekle</button>
 <button type="button" id="btndeletewriter" class="btn btn-outline-danger">Yazar Sil</button>
+<button type="button" id="btnupdatewriter" class="btn btn-outline-secondary">Yazar Güncelle</button>
 <br />
 <br />
 <div id="writerlist">
@@ -38,6 +39,14 @@
 </div>
 <div>
     <input type="text" class="form-control" id="txtid" placeholder="Silenecek yazar Idsini girin" />
+</div>
+<div>
+    <input type="text" id="txtid1" class="form-control" placeholder="Güncellenecek Id" />
+    <input type="text" id="txtid2" class="form-control" placeholder="Güncellenecek İsim" />
+    <input type="text" id="txtid3" class="form-control" placeholder="Güncellenecek Hakkında" />
+    <input type="text" id="txtid4" class="form-control" placeholder="Güncellenecek İmage" />
+    <input type="text" id="txtid5" class="form-control" placeholder="Güncellenecek Mail" />
+    <input type="text" id="txtid6" class="form-control" placeholder="Güncellenecek Password" />
 </div>
 @section scripts{
     <script>
@@ -109,6 +118,26 @@
                 dataType: "json",
                 success: function (func) {
                     alert("Yazar silme işlemi başarılı bir şekilde gerçekleşti.");
+                }
+            });
+        });
+
+        $("#btnupdatewriter").click(function () {
+            let writer = {
+                WriterId: $("#txtid1").val(),
+                WriterName: $("#txtid2").val(),
+                WriterAbout: $("#txtid3").val(),
+                WriterImage: $("#txtid4").val(),
+                WriterMail: $("#txtid5").val(),
+                WriterPassword: $("#txtid6").val(),
+
+            };
+            $.ajax({
+                type: "post",
+                url: "/Admin/Writer/UpdateWriter/",
+                data: writer,
+                success: function (func) {
+                    alert("Güncelleme yapıldı.");
                 }
             });
         });
