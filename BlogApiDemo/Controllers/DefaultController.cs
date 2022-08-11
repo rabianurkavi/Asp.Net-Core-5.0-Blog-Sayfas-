@@ -32,7 +32,7 @@ namespace BlogApiDemo.Controllers
         {
             using var c = new Context();
             var employee = c.Employees.Find(id);
-            if(employee==null)
+            if (employee == null)
             {
                 return NotFound();
             }
@@ -46,13 +46,30 @@ namespace BlogApiDemo.Controllers
         {
             using var c = new Context();
             var employee = c.Employees.Find(id);
-            if(employee==null)
+            if (employee == null)
             {
                 return NotFound();
             }
             else
             {
                 c.Remove(employee);
+                c.SaveChanges();
+                return Ok();
+            }
+        }
+        [HttpPut]
+        public IActionResult EmployeeUpdate(Employee employee)
+        {
+            using var c = new Context();
+            var emp = c.Find<Employee>(employee.EmployeeId);
+            if (emp == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                emp.EmployeeName = employee.EmployeeName;
+                c.Update(emp);
                 c.SaveChanges();
                 return Ok();
             }
