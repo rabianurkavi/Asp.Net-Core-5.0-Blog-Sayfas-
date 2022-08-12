@@ -230,3 +230,4 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\BlogApiDemo.d
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\bin\Debug\net5.0\BlogApiDemo.pdb
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\EmployeeTest\Index.cshtml.g.cs
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\EmployeeTest\AddEmployee.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\EmployeeTest\UpdateEmployee.cshtml.g.cs
