@@ -54,6 +54,14 @@
               "target": "Package",
               "version": "[1.0.175, )"
             },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.9, )"
@@ -139,6 +147,14 @@
             "DiscordRichPresence": {
               "target": "Package",
               "version": "[1.0.175, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
             }
           },
           "imports": [

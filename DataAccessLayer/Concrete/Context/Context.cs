@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.Context
 {
-    public class Context:DbContext
+    public class Context:IdentityDbContext<AppUser>
     {
         //bağlantı stringimizi tanımlayacağız. connection stringi tanımlamak içib
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -38,6 +39,7 @@ namespace DataAccessLayer.Concrete.Context
                 .WithMany(y => y.WriterReceiver)
                 .HasForeignKey(z => z.ReceiverID)
                 .OnDelete(DeleteBehavior.ClientSetNull);
+            base.OnModelCreating(modelBuilder);
             // HomeMatches-- > WriterSender
             //AwayMatches-- > WriterReceiver
 
