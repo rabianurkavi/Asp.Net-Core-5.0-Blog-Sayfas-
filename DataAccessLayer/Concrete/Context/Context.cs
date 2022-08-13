@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.Context
 {
-    public class Context:IdentityDbContext<AppUser>
+    public class Context : IdentityDbContext<AppUser,AppRole,int>
     {
         //bağlantı stringimizi tanımlayacağız. connection stringi tanımlamak içib
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
