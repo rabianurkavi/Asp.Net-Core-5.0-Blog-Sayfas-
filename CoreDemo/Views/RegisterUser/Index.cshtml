@@ -22,15 +22,16 @@
 </head>
 
 <body class="gray-bg">
-
+    
     <div class="middle-box text-center loginscreen   animated fadeInDown">
         <div>
-            <div>
-                <İmg></İmg>
-                <h1 class="logo-name">RNK</h1>
+            <table class="table table-bordered">
+                <div>
+                    <img src="~/image/User4.png" height="200" width="200" />
+                </div>
 
-            </div>
-            <h2>Kayıt Ekranı</h2>
+            </table>
+            <h4>Üye Ol</h4>
             <p>Siteye gitmek için lütfen kayıt olun.</p>
             <form class="m-t" role="form" asp-action="Index">
 
@@ -89,7 +90,8 @@
     <script src="~/admin/js/bootstrap.js"></script>
     <!-- iCheck -->
     <script src="~/admin/js/plugins/iCheck/icheck.min.js"></script>
-    <script>$(document).ready(function(){
+    <script>
+    $(document).ready(function () {
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
                 radioClass: 'iradio_square-green',

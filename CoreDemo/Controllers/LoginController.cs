@@ -1,8 +1,10 @@
-﻿using DataAccessLayer.Concrete.Context;
+﻿using CoreDemo.Models;
+using DataAccessLayer.Concrete.Context;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,46 +14,68 @@ using System.Threading.Tasks;
 
 namespace CoreDemo.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
-        [AllowAnonymous]
-        [HttpGet]
+        private readonly SignInManager<AppUser> _signInManager;
+
+        public LoginController(SignInManager<AppUser> signInManager)
+        {
+            _signInManager = signInManager;
+        }
+        [HttpPost]
+        public async Task<IActionResult> Index(UserSignInViewModel user)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(user.username, user.password, false, true);//sondaki parametre belli bir süre yanlış giriş sonucu banlanmak
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Dashboard");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+            }
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();
         }
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<ActionResult> Index(Writer writer)
-        {
-            Context context = new Context();
-            var dataValue = context.Writers.FirstOrDefault(x => x.WriterMail == writer.WriterMail && x.WriterPassword == writer.WriterPassword);
-            if(dataValue!=null)
-            {
-                var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name,writer.WriterMail)
-                };
-                var useridentity = new ClaimsIdentity(claims, "a");
-                ClaimsPrincipal principal = new ClaimsPrincipal(useridentity);
-                await HttpContext.SignInAsync(principal);
-                return RedirectToAction("Index", "Dashboard");
-            }
-            else
-            {
-                return View();
-            }
-            //Context context = new Context();
-            //var dataValue = context.Writers.FirstOrDefault(x=>x.WriterMail==writer.WriterMail && x.WriterPassword== writer.WriterPassword);
-            //if (dataValue != null)
-            //{
-            //    HttpContext.Session.SetString("username", writer.WriterMail);
-            //    return RedirectToAction("Index", "Writer");
-            //}
-            //else
-            //{
-            //    return View();
-            //}
-        }
+        //[HttpPost]
+        //public async Task<ActionResult> Index(Writer writer)
+        //{
+        //    Context context = new Context();
+        //    var dataValue = context.Writers.FirstOrDefault(x => x.WriterMail == writer.WriterMail && x.WriterPassword == writer.WriterPassword);
+        //    if(dataValue!=null)
+        //    {
+        //        var claims = new List<Claim>
+        //        {
+        //            new Claim(ClaimTypes.Name,writer.WriterMail)
+        //        };
+        //        var useridentity = new ClaimsIdentity(claims, "a");
+        //        ClaimsPrincipal principal = new ClaimsPrincipal(useridentity);
+        //        await HttpContext.SignInAsync(principal);
+        //        return RedirectToAction("Index", "Dashboard");
+        //    }
+        //    else
+        //    {
+        //        return View();
+        //    }
+        //    //Context context = new Context();
+        //    //var dataValue = context.Writers.FirstOrDefault(x=>x.WriterMail==writer.WriterMail && x.WriterPassword== writer.WriterPassword);
+        //    //if (dataValue != null)
+        //    //{
+        //    //    HttpContext.Session.SetString("username", writer.WriterMail);
+        //    //    return RedirectToAction("Index", "Writer");
+        //    //}
+        //    //else
+        //    //{
+        //    //    return View();
+        //    //}
+        //}
     }
 }
