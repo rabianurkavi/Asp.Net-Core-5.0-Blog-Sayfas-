@@ -55,5 +55,36 @@ namespace CoreDemo.Controllers
             }
             return View(userSignUpView);
         }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(UserSignUpViewModel userSignUpView)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser user = new AppUser()
+                {
+                    Email = userSignUpView.Mail,
+                    UserName = userSignUpView.UserName,
+                    NameSurname = userSignUpView.NameSurname,
+                };
+                var result = await _userManager.CreateAsync(user, userSignUpView.Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
+            }
+            return View(userSignUpView);
+        }
     }
 }

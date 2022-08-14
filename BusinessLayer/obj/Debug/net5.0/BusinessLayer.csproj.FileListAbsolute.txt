@@ -14,4 +14,3 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\BusinessLayer\obj\Debug\net5.0\Business
 C:\Users\Rabia Nur\source\repos\CoreDemo\BusinessLayer\obj\Debug\net5.0\BusinessLayer.dll
 C:\Users\Rabia Nur\source\repos\CoreDemo\BusinessLayer\obj\Debug\net5.0\ref\BusinessLayer.dll
 C:\Users\Rabia Nur\source\repos\CoreDemo\BusinessLayer\obj\Debug\net5.0\BusinessLayer.pdb
-C:\Users\Rabia Nur\source\repos\CoreDemo\BusinessLayer\obj\Debug\net5.0\BusinessLayer.csproj.CopyComplete

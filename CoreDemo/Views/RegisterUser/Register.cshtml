@@ -1,0 +1,63 @@
+﻿@model UserSignUpViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">Kayıt Ol</h3>
+        <div class="row inner-sec">
+            <div class="login p-5 bg-light mx-auto mw-100">
+                <form method="post">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="exampleInputEmail1 mb-2"> Adınız Soyadınız</label>
+                            <span asp-validation-for="@Model.NameSurname" class="text-danger"></span>
+                            <input type="text" class="form-control" asp-for="@Model.NameSurname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="exampleInputEmail1 mb-2">Mail Adresiniz</label>
+                            <span asp-validation-for="@Model.Mail" class="text-danger"></span>
+                            <input type="email" class="form-control" asp-for="@Model.Mail" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                            <label for="exampleInputEmail1 mb-2">Şifre</label>
+                            <input type="password" class="form-control" asp-for="@Model.Password" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+                            <label for="exampleInputEmail1 mb-2">Kullanıcı Adınız</label>
+                            <input type="text" class="form-control" asp-for="@Model.UserName" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
+                            <label for="exampleInputEmail1 mb-2">Şifre Tekrar</label>
+                            <input type="password" class="form-control" asp-for="@Model.ConfirmPassword" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Beni hatırla</label>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary submit submit mb-4 col-12">
+                        Kayıt Ol
+                    </button>
+
+                    <p><a href="/Login/Index/"> Zaten bir hesabın var mı?</a></p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

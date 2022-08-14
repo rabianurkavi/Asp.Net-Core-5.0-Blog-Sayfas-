@@ -13,6 +13,7 @@ namespace CoreDemo.ViewComponents.Category
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         public IViewComponentResult Invoke()
         {
+            //ViewBag.vlc=categoryManager.GetById()
             var values = categoryManager.GetList();
             return View(values);
         }
