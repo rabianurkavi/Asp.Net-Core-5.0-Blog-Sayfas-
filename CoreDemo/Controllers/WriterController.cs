@@ -21,7 +21,7 @@ namespace CoreDemo.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         WriterManager writerManager = new WriterManager(new EfWriterDal());
-       
+
         Context context = new Context();
 
         public WriterController(UserManager<AppUser> userManager)
@@ -33,7 +33,7 @@ namespace CoreDemo.Controllers
         {
             var userMail = User.Identity.Name;
             ViewBag.uM = userMail;
-            
+
             var writerName = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterName).FirstOrDefault();
             ViewBag.wN = writerName;
             return View();
@@ -63,39 +63,44 @@ namespace CoreDemo.Controllers
             return PartialView();
         }
         [AllowAnonymous]
-        public IActionResult WriterEditProfile()
+        public async Task<IActionResult> WriterEditProfile()
         {
-            UserManager userManager = new UserManager(new EfUserDal());
-           //var userName = User.Identity.Name;
-           //var userMail = context.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
-           //var writerId = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
-           //var writerValues = writerManager.GetById(writerId);
-           //return View(writerValues);
-           //var username = await _userManager.FindByNameAsync(User.Identity.Name);//yani sisteme authentice olan kullanıcının adına göre ara
-           var username = User.Identity.Name;
-            var id = context.Users.Where(x => x.UserName == username).Select(y => y.Id).FirstOrDefault();
-            var values = userManager.GetById(id);
-            return View(values);
+            UserUpdateViewModel model = new UserUpdateViewModel();
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            model.mail = values.Email;
+            model.imageurl = values.ImageUrl;
+            model.username = values.UserName;
+            model.namesurname = values.NameSurname;
+            
+            return View(model);
         }
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult WriterEditProfile(Writer writer)
+        public async Task<IActionResult> WriterEditProfile(UserUpdateViewModel model)
         {
-            WriterValidator validationRules = new WriterValidator();
-            ValidationResult results = validationRules.Validate(writer);
-            if(results.IsValid)
-            {
-                writerManager.TUpdate(writer);
-                return RedirectToAction("Index", "Dashboard");
-            }
-            else
-            {
-                foreach(var item in results.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-            }
-            return View();
+            //WriterValidator validationRules = new WriterValidator();
+            //ValidationResult results = validationRules.Validate(writer);
+            //if(results.IsValid)
+            //{
+            //    writerManager.TUpdate(writer);
+            //    return RedirectToAction("Index", "Dashboard");
+            //}
+            //else
+            //{
+            //    foreach(var item in results.Errors)
+            //    {
+            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            //    }
+            //}
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            values.NameSurname = model.namesurname;
+            values.Email = model.mail;
+            values.ImageUrl = model.imageurl;
+            values.UserName = model.username;
+            var result = await _userManager.UpdateAsync(values);
+
+
+            return RedirectToAction("Index", "Dashboard");
         }
         [AllowAnonymous]
         [HttpGet]
@@ -108,7 +113,7 @@ namespace CoreDemo.Controllers
         public IActionResult WriterAdd(AddProfileImage writer)
         {
             Writer writer1 = new Writer();
-            if(writer.WriterImage!=null)
+            if (writer.WriterImage != null)
             {
                 var extension = Path.GetExtension(writer.WriterImage.FileName);
                 var newImageName = Guid.NewGuid() + extension;
