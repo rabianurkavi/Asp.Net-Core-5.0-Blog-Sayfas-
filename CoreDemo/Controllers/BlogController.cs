@@ -17,6 +17,7 @@ namespace CoreDemo.Controllers
 
     public class BlogController : Controller
     {
+        private CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
         BlogManager blogManager = new BlogManager(new EfBlogDal());
         Context context = new Context();
         [AllowAnonymous]
@@ -34,9 +35,11 @@ namespace CoreDemo.Controllers
         }
         public IActionResult BlogListByWriter()
         {
-            var userMail = User.Identity.Name;
-            var writerID = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
-            var values = blogManager.GetBlogListWithCategoryByWriter(writerID);
+            //Identity ile writer tablosunda eşleşen kullanıcılara aynı maili verdim
+            var userName = User.Identity.Name;
+            var userMail = context.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
+            var writerId = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
+            var values = blogManager.GetBlogListWithCategoryByWriter(writerId);
             return View(values);
         }
         [HttpGet]
@@ -79,6 +82,7 @@ namespace CoreDemo.Controllers
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
+            GetCategoryList();
             return View();
         }
         public IActionResult BlogDelete(int id)
@@ -107,6 +111,16 @@ namespace CoreDemo.Controllers
         {
             blogManager.TUpdate(blog);
             return RedirectToAction("BlogListByWriter", "Blog");
+        }
+        public void GetCategoryList()
+        {
+            List<SelectListItem> categories = (from c in _categoryManager.GetList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = c.CategoryName,
+                                                   Value = c.CategoryId.ToString()
+                                               }).ToList();
+            ViewBag.categoriesList = categories;
         }
     }
 }

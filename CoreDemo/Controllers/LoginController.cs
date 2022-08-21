@@ -45,6 +45,11 @@ namespace CoreDemo.Controllers
         {
             return View();
         }
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index","Login");
+        }
         //[HttpPost]
         //public async Task<ActionResult> Index(Writer writer)
         //{
