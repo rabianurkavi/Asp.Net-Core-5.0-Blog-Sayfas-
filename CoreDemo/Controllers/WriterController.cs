@@ -6,6 +6,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,21 @@ namespace CoreDemo.Controllers
     [Authorize]
     public class WriterController : Controller
     {
+        private readonly UserManager<AppUser> _userManager;
         WriterManager writerManager = new WriterManager(new EfWriterDal());
+       
+        Context context = new Context();
+
+        public WriterController(UserManager<AppUser> userManager)
+        {
+            _userManager = userManager;
+        }
+
         public IActionResult Index()
         {
             var userMail = User.Identity.Name;
             ViewBag.uM = userMail;
-            Context context = new Context();
+            
             var writerName = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterName).FirstOrDefault();
             ViewBag.wN = writerName;
             return View();
@@ -55,11 +65,17 @@ namespace CoreDemo.Controllers
         [AllowAnonymous]
         public IActionResult WriterEditProfile()
         {
-            var userMail = User.Identity.Name;
-            Context context = new Context();
-            var writerID = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
-            var writerValues = writerManager.GetById(writerID);
-            return View(writerValues);
+            UserManager userManager = new UserManager(new EfUserDal());
+           //var userName = User.Identity.Name;
+           //var userMail = context.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
+           //var writerId = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
+           //var writerValues = writerManager.GetById(writerId);
+           //return View(writerValues);
+           //var username = await _userManager.FindByNameAsync(User.Identity.Name);//yani sisteme authentice olan kullanıcının adına göre ara
+           var username = User.Identity.Name;
+            var id = context.Users.Where(x => x.UserName == username).Select(y => y.Id).FirstOrDefault();
+            var values = userManager.GetById(id);
+            return View(values);
         }
         [AllowAnonymous]
         [HttpPost]

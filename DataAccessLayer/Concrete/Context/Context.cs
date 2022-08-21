@@ -16,6 +16,7 @@ namespace DataAccessLayer.Concrete.Context
         {
             optionsBuilder.UseSqlServer("server=DESKTOP-EULMR9J;database=CoreBlogDb;" +
                 "integrated security=true;");
+            
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
