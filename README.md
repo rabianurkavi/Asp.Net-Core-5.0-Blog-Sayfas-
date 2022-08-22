@@ -5,8 +5,6 @@
 ezmek durumunda kaldığım problemlerde oldu.** <br/>
 *Katmanlı Mimari yapısı ve SOLID prensibi kullanılmıştır.*  <br/>
 *ASP .NET CORE 5.0 kullanarak geliştirilmiştir.*  <br/>
-![Admin Giriş](https://github.com/rabianur412/FeedMe/blob/main/FeedMe/ReadMe/AdminGiri%C5%9F.png)
-![Kullanıcı Giriş](https://github.com/rabianur412/FeedMe/blob/main/FeedMe/ReadMe/HayvanseverGiri%C5%9Fi.png)
 **                       KULLANICI GİRİŞ-KULLANICI KAYIT**
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/login.png)
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/register.png)
