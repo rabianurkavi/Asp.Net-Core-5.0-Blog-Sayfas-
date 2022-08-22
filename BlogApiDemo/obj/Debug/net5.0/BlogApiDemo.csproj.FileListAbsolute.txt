@@ -57,5 +57,4 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\BlogApiDem
 C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\ref\BlogApiDemo.dll
 C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\BlogApiDemo.pdb
 C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\BlogApiDemo.genruntimeconfig.cache
-C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\BlogApiDemo.csproj.CopyComplete
 C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\BlogApiDemo.csproj.AssemblyReference.cache

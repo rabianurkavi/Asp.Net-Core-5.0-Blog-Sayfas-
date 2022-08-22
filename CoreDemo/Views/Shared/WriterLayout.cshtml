@@ -22,13 +22,24 @@
     <link rel="stylesheet" href="~/writer/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="~/writer/assets/images/favicon.ico" />
+    <link href="~/CoreBlogTema/web/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/CoreBlogTema/web/css/fontawesome-all.css" rel="stylesheet">
 </head>
 <body>
     <div class="container-scroller">
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand navbar-brand-wrapper" href="~/writer/index.html"><img src="~/CoreBlogTema/web/images/teladoc.png" alt="logo" /></a>
+                @*<a class="navbar-brand navbar-brand-wrapper" href="~/writer/index.html"><img src="~/CoreBlogTema/web/images/teladoc.png" width="10" height="20" alt="logo" /></a>*@
+                <div class="top-bar_sub_w3layouts container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 logo text-left">
+                            <a class="navbar-brand" href="#">
+                                <i class="fab fa-linode">KVOTHE</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <a class="navbar-brand brand-logo-mini" href="~/writer/index.html"><img src="~/writer/assets/images/logo-mini.svg" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -51,7 +62,7 @@
                 </button>
             </div>
         </nav>
-        
+
         <div class="container-fluid page-body-wrapper">
 
             @await Html.PartialAsync("~/Views/Writer/WriterNavbarPartial.cshtml")

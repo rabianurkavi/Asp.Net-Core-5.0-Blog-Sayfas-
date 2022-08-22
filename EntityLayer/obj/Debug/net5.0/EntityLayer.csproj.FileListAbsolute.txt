@@ -9,3 +9,4 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\EntityLaye
 C:\Users\Rabia Nur\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
 C:\Users\Rabia Nur\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\Rabia Nur\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
+C:\Users\Rabia Nur\source\repos\CoreDemo\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.AssemblyReference.cache
