@@ -2,9 +2,9 @@
 
 
 **Kullanıcı tabanlı blog sitesi.Blogların puanlanarak yorum yapılması, kişisel bloglarınızı oluştururken diğer kullanıcılarla iletişim halinde olabilmeniz için gerekli
-mesaj işlemleri mevcuttur. Kullanıcı girişimiz authentication ile sağlanmıştır.Hashleme ve saltlama algoritmalarıyla veri tabanı güvenliği sağlanmıştır.** <br/>
+mesaj işlemleri mevcuttur. Kullanıcı girişimiz authentication ile sağlanmış olup gerekli yerlere authorize attiributeleri eklenmiştir.Hashleme ve saltlama algoritmalarıyla veri tabanı güvenliği sağlanmıştır.** <br/>
 *Katmanlı Mimari yapısı ve SOLID prensibi kullanılmıştır.*  <br/>
-*Identity Kütüphanesi yazar işlemleri sağlanmıştır*  <br/>
+*Identity Kütüphanesi ile yazar işlemleri sağlanmıştır*  <br/>
 *ViewComponentlerle dinamik*  <br/>
 *ASP .NET CORE 5.0 kullanarak geliştirilmiştir.*  <br/>
 **                       KULLANICI GİRİŞ-KULLANICI KAYIT**
