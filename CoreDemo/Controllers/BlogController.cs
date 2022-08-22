@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using CoreDemo.Models;
 using DataAccessLayer.Concrete.Context;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -67,11 +69,11 @@ namespace CoreDemo.Controllers
             {
 
                 blog.BlogStatus = true;
-                blog.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());          
+                blog.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 blog.WriterId = writerId;
                 blogManager.TAdd(blog);
                 return RedirectToAction("BlogListByWriter", "Blog");
-               
+
 
 
             }
@@ -82,9 +84,10 @@ namespace CoreDemo.Controllers
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
-            GetCategoryList();
+           
             return View();
         }
+    
         public IActionResult BlogDelete(int id)
         {
             var blogValue = blogManager.GetById(id);

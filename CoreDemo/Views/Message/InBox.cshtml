@@ -4,7 +4,7 @@
     ViewData["Title"] = "InBox";
     Layout = "~/Views/Shared/WriterLayout.cshtml";
 }
-
+@{ int i = 1; }
 <h1>Gelen Kutusu</h1>
 <table class="table table-bordered">
     <tr>
@@ -16,13 +16,17 @@
     </tr>
     @foreach (var item in Model)
     {
-<tr>
-    <th>@item.MessageID</th>
-    <td>@item.Subject</td>
-    <td>@item.SenderUser.WriterName</td>
-    <td>@(((DateTime)item.MessageDate).ToString("dd-MMMM-yyyy"))</td>
-    <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-warning">Mesajı Aç</a></td>
-</tr>
+        
+
+        
+            <tr>
+                <th>@(i++)</th>
+                <td>@item.Subject</td>
+                <td>@item.SenderUser.WriterName</td>
+                <td>@(((DateTime)item.MessageDate).ToString("dd-MMMM-yyyy"))</td>
+                <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-gradient-success">Mesajı Aç</a></td>
+            </tr>
+        
     }
 </table>
 

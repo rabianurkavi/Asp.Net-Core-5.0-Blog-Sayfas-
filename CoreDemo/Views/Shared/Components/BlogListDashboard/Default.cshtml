@@ -52,6 +52,10 @@
                                         {
                                             <label class="badge badge-gradient-info">@item.Category.CategoryName</label>
                                         }
+                                        @if (item.CategoryId == 7)
+                                        {
+                                            <label class="badge badge-gradient-secondary">@item.Category.CategoryName</label>
+                                        }
 
                                     </td>
                                     <td> @(((DateTime)item.BlogCreateDate).ToString("dd-MMMM-yyyy")) </td>

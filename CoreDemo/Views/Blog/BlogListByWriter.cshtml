@@ -5,29 +5,31 @@
     Layout = "~/Views/Shared/WriterLayout.cshtml";
 }
 
-<h1>Yazarın Blogları</h1>
+<h3>Bloglarım</h3>
 <table class="table table-bordered">
     <tr>
-        <th>#</th>
+
         <th>Blog Başlığı</th>
         <th>Oluşturma Tarihi</th>
         <th>Kategori</th>
         <th>Durum</th>
         <th>Sil</th>
         <th>Düzenle</th>
+        <th>Bloğa Git</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <th>@item.BlogId</th>
+   
             <td>@item.BlogTitle</td>
             <td>@(((DateTime)item.BlogCreateDate).ToString("dd-MMMM-yyyy"))</td>
             <td>@item.Category.CategoryName</td>
             <td>@item.BlogStatus</td>
             <td><a href="/Blog/BlogDelete/@item.BlogId" onclick="return confirm('Bloğu silmek üzeresiniz.');" class="btn btn-danger">Sil</a></td>
             <td><a href="/Blog/EditBlog/@item.BlogId" class="btn btn-warning">Düzenle</a></td>
+            <td><a href="/Blog/BlogReadAll/@item.BlogId" class="btn btn-success">Bloğa git</a></td>
         </tr>
     }
 </table>
-<a href="/Blog/BlogAdd" class="btn btn-primary">Yeni Blog Oluştur</a>
+<a href="/Blog/BlogAdd" class="btn btn-gradient-primary">Yeni Blog Oluştur</a>
 

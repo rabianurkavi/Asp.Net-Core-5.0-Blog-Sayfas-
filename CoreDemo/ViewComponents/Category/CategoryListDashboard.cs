@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.Context;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,6 +14,7 @@ namespace CoreDemo.ViewComponents.Category
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         public IViewComponentResult Invoke()
         {
+            
             var values = categoryManager.GetList();
             return View(values);
         }
