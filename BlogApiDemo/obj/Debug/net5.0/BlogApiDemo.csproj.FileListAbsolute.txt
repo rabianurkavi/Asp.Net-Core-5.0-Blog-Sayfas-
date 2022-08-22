@@ -58,3 +58,4 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\ref\BlogAp
 C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\BlogApiDemo.pdb
 C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\BlogApiDemo.genruntimeconfig.cache
 C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\BlogApiDemo.csproj.AssemblyReference.cache
+C:\Users\Rabia Nur\source\repos\CoreDemo\BlogApiDemo\obj\Debug\net5.0\BlogApiDemo.csproj.CopyComplete

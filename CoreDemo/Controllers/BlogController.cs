@@ -31,8 +31,13 @@ namespace CoreDemo.Controllers
         [AllowAnonymous]
         public IActionResult BlogReadAll(int id)
         {
+            
             ViewBag.i = id;
             var values = blogManager.GetBlogById(id);
+            var commentNumber = context.Comments.Where(x => x.BlogId==id).Count();
+            var blogScore = context.Comments.Where(x => x.BlogId == id).Select(y => y.BlogScore).FirstOrDefault();
+            ViewBag.commentNumber = commentNumber;
+            ViewBag.blogScore = blogScore;
             return View(values);
         }
         public IActionResult BlogListByWriter()

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.Blog>
 @{
     ViewData["Title"] = "BlogDetails";
-    Layout = "~/Views/Shared/UserLayout.cshtml";
+    Layout = "~/Views/Shared/_LoginUserLayout.cshtml";
 }
 
 
@@ -30,12 +30,12 @@
                                     </li>
                                     <li class="mx-2">
                                         <a href="#">
-                                            <i class="far fa-thumbs-up"></i> 201 Beğeni
+                                            <i class="far fa-star"></i> @ViewBag.blogScore
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="far fa-comment"></i> 15 Yorum
+                                            <i class="far fa-comment"></i>  @ViewBag.commentNumber
                                         </a>
                                     </li>
 
@@ -93,23 +93,7 @@
                                      aria-valuemax="100"></div>
                             </div>
                         </div>
-                        <div class="single-gd tech-btm">
-                            <h4>Son Eklenen Post</h4>
-                            <div class="blog-grids">
-                                <div class="blog-grid-left">
-                                    <a href="single.html">
-                                        <img src="~/CoreBlogTema/web/images/b1.jpg" class="img-fluid" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-grid-right">
-
-                                    <h5>
-                                        <a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
-                                    </h5>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                        </div>
+                        @await Component.InvokeAsync("BlogLastBlog")
                     </div>
 
                 </aside>

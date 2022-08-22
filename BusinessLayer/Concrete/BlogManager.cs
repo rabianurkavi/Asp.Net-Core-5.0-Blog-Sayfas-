@@ -38,6 +38,11 @@ namespace BusinessLayer.Concrete
         {
             return _blogDal.List().TakeLast(3).ToList();
         }
+        public List<Blog> GetLastBlog()
+        {
+            return _blogDal.List().TakeLast(1).ToList();
+        }
+
 
         public List<Blog> GetBlogListByWriter(int id)
         {

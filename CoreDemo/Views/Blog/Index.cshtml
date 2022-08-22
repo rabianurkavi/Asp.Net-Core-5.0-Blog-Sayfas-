@@ -2,7 +2,7 @@
 @model List<Blog>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/UserLayout.cshtml";
+    Layout = "~/Views/Shared/_LoginUserLayout.cshtml";
 }
 
 <section class="main-content-w3layouts-agileits">
@@ -28,11 +28,7 @@
                                             <i class="far fa-calendar-alt"></i> @(((DateTime)item.BlogCreateDate).ToString("dd-MMMM-yyyy"))
                                         </a>
                                     </li>
-                                    <li class="mx-2">
-                                        <a href="#">
-                                            <i class="far fa-comment"></i> 21
-                                        </a>
-                                    </li>
+
                                     <li>
                                         <a href="#">
                                             <i class="fas fa-asterisk"></i> @item.Category.CategoryName

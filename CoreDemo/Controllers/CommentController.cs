@@ -28,7 +28,7 @@ namespace CoreDemo.Controllers
         {
             comment.CommentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             comment.CommentStatus = true;
-            comment.BlogId = 2;
+            comment.BlogId = 7;
             commentManager.TAdd(comment);
             return RedirectToAction("Index", "Blog");
         }

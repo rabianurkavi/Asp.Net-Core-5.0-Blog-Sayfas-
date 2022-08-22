@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+@foreach(var item in Model)
+{
+<div class="single-gd tech-btm">
+    <h4>Son Eklenen Post</h4>
+    <div class="blog-grids">
+        <div class="blog-grid-left">
+            <a href="single.html">
+                <img src="@item.BlogImage" class="img-fluid" alt="">
+            </a>
+        </div>
+        <div class="blog-grid-right">
+
+            <h5>
+                <a href="single.html">
+                    @(item.BlogContent.Length > 150 ? item.BlogContent.Substring
+                                                          (0, item.BlogContent.Substring(0,155).LastIndexOf(" "))+"..."
+                                                           : item.BlogContent + "...")
+                </a>
+            </h5>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+}
