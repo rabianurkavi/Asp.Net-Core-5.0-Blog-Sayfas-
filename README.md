@@ -1,4 +1,4 @@
-#.Net Core 5.1 Blog Projesi 
+#.Net Core 5.0 Blog Projesi 
 
 
 **Kullanıcı tabanlı blog sitesi.Blogların puanlanarak yorum yapılması, kişisel bloglarınızı oluştururken diğer kullanıcılarla iletişim halinde olabilmeniz için gerekli
