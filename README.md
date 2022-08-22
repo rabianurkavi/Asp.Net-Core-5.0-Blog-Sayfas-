@@ -1,9 +1,11 @@
 #.Net Core 5.1 Blog Projesi 
 
 
-**Blog sitesini ASP .NET CORE 5.0 kullanılarak geliştirilmiştir.ViewComponent ve partialview kullanılmıştır. SOLİD prensiplerine gerektiğince dikkat etmeye çalıştım
-ezmek durumunda kaldığım problemlerde oldu.** <br/>
+**Kullanıcı tabanlı blog sitesi.Blogların puanlanarak yorum yapılması, kişisel bloglarınızı oluştururken diğer kullanıcılarla iletişim halinde olabilmeniz için gerekli
+mesaj işlemleri mevcuttur. Kullanıcı girişimiz authentication ile sağlanmıştır.Hashleme ve saltlama algoritmalarıyla veri tabanı güvenliği sağlanmıştır.** <br/>
 *Katmanlı Mimari yapısı ve SOLID prensibi kullanılmıştır.*  <br/>
+*Identity Kütüphanesi yazar işlemleri sağlanmıştır*  <br/>
+*ViewComponentlerle dinamik*  <br/>
 *ASP .NET CORE 5.0 kullanarak geliştirilmiştir.*  <br/>
 **                       KULLANICI GİRİŞ-KULLANICI KAYIT**
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/login.png)
