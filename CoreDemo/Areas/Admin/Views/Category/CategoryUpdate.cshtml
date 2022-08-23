@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@using (Html.BeginForm("CategoryUpdate","Category", FormMethod.Post))
+@using (Html.BeginForm("CategoryUpdate", "Category", FormMethod.Post))
 {
     <h1>EditBlog</h1>
     @Html.Label("Kategori Adı")
@@ -21,3 +21,6 @@
     <button class="btn btn-primary">Kategoriyi Güncelle</button>
 }
 
+@section scripts{
+
+}
