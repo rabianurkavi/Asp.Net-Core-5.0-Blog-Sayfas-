@@ -28,7 +28,12 @@ namespace BusinessLayer.Concrete
 
         public List<Comment> GetList()
         {
-            throw new NotImplementedException();
+            return _commentDal.List();
+        }
+
+        public List<Comment> GetListWithCategory()
+        {
+            return _commentDal.GetListWithCategory();
         }
 
         public void TAdd(Comment t)
