@@ -1,0 +1,63 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <link href="~/CoreBlogTema/web/css/single.css" rel='stylesheet' type='text/css' />
+    <link href="~/CoreBlogTema/web/css/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+ 
+            <h3 class="tittle">Hakkımızda</h3>
+            <div class="row inner-sec">
+                <!--left-->
+                <div class="col-lg-12 left-blog-info-w3layouts-agileits text-left">
+                    <div class="blog-grid-top">
+
+                        <div class="blog_info_left_grid">
+                            <a href="single.html">
+
+                                &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;<img style="right;" src="~/CoreBlogTema/web/images/b5.jpg" class="img-fluid" alt="">
+                            </a>
+                            <br>
+                            <br>
+                        </div>
+                        <h3>
+                            &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Biz Kimiz & Misyonumuz & Vizyonumuz
+                            <br>
+                            <br>
+                        </h3>
+                        <h6 >
+                            Blog Tarihçesi
+
+                        </h6>
+                        @foreach (var item in Model)
+                        {
+
+                            <p>
+                                @item.AboutDetails1
+                            </p>
+                            <h6 style="font-language-override">
+                                Blog Nedir?
+                                <p></p>
+                            </h6>
+                            <p>
+                                @item.AboutDetails2
+                            </p>
+
+                        }
+                    </div>
+                </div>
+            </div>
+   
+       @section scripts{ }
+
+</body>
+</html>
+
