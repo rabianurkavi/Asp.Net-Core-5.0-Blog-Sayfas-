@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.Context;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,7 +14,11 @@ namespace CoreDemo.ViewComponents.Blog
         BlogManager blogManager = new BlogManager(new EfBlogDal());
         public IViewComponentResult Invoke()
         {
-            var values = blogManager.GetBlogListByWriter(1);
+            Context context = new Context();
+            var userName = User.Identity.Name;
+            var userMail = context.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
+            var writerId = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
+            var values = blogManager.GetBlogListByWriter(writerId);
             return View(values);
 
         }
