@@ -49,6 +49,11 @@ namespace CoreDemo.Areas.Admin.Controllers
             writerManager.TDelete(writer);
             return Json(writer);
         }
+        public IActionResult WriterProfileList()
+        {
+            var values = writerManager.GetList();
+            return View(values);
+        }
         public IActionResult UpdateWriter(Writer writer)
         {
             //Context context = new Context();

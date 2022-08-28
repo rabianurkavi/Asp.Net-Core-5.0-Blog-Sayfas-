@@ -40,5 +40,9 @@ namespace BusinessLayer.Concrete
         {
             _adminDal.Update(t);
         }
+       
+
+
+
     }
 }
