@@ -246,3 +246,5 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\A
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminNotification\NotificationAdd.cshtml.g.cs
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminContact\Index.cshtml.g.cs
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminAbout\Index.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminRole\Index.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminRole\AddRole.cshtml.g.cs
