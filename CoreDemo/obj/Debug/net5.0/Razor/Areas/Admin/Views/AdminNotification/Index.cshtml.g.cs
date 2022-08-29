@@ -13,6 +13,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+#line 1 "C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\Areas\Admin\Views\_ViewImports.cshtml"
+using CoreDemo.Areas.Admin;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\Areas\Admin\Views\_ViewImports.cshtml"
+using CoreDemo.Areas.Admin.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\Areas\Admin\Views\AdminNotification\Index.cshtml"
 using EntityLayer.Concrete;
 
@@ -20,8 +34,12 @@ using EntityLayer.Concrete;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e564abae77c1da5fa35c7958d9a4ebc9f2fa1333", @"/Areas/Admin/Views/AdminNotification/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b881055197282d0a2ab51004156381e82f1e1fbc", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_AdminNotification_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Notification>>
     {
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "0", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "1", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_2 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "2", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         #line hidden
         #pragma warning disable 0649
         private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext __tagHelperExecutionContext;
@@ -44,6 +62,7 @@ using EntityLayer.Concrete;
         }
         private global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.HeadTagHelper __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_HeadTagHelper;
         private global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_BodyTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
@@ -57,7 +76,7 @@ using EntityLayer.Concrete;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e564abae77c1da5fa35c7958d9a4ebc9f2fa13333318", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e564abae77c1da5fa35c7958d9a4ebc9f2fa13334900", async() => {
                 WriteLiteral("\r\n    <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n\r\n\r\n");
             }
             );
@@ -71,7 +90,7 @@ using EntityLayer.Concrete;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e564abae77c1da5fa35c7958d9a4ebc9f2fa13334398", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e564abae77c1da5fa35c7958d9a4ebc9f2fa13335980", async() => {
                 WriteLiteral(@"
 
     <div class=""wrapper wrapper-content animated fadeInRight"">
@@ -104,16 +123,61 @@ using EntityLayer.Concrete;
                         <div class=""row"">
                             <div class=""col-sm-5 m-b-xs"">
                                 <select class=""form-control-sm form-control input-s-sm inline"">
-                                    <option value=""0"">Önemli </option>
-                                    <option value=""1"">Toplantı </option>
-                                    <option value=""2"">Bakım </option>
+                                    ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e564abae77c1da5fa35c7958d9a4ebc9f2fa13337753", async() => {
+                    WriteLiteral("Önemli ");
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_0.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                WriteLiteral("\r\n                                    ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e564abae77c1da5fa35c7958d9a4ebc9f2fa13339013", async() => {
+                    WriteLiteral("Toplantı ");
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_1.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_1);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                WriteLiteral("\r\n                                    ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e564abae77c1da5fa35c7958d9a4ebc9f2fa133310275", async() => {
+                    WriteLiteral("Bakım ");
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = (string)__tagHelperAttribute_2.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                WriteLiteral(@"
                                 </select>
                             </div>
                             <div class=""col-sm-4 m-b-xs"">
                                 <div class=""btn-group btn-group-toggle"" data-toggle=""buttons"">
                                     <label class=""btn btn-sm btn-white active "">
-                                        <input type=""radio"" name=""options"" id=""option1"" autocomplete=""on"" check");
-                WriteLiteral(@"ed> Gün
+                                        <input type=""radio"" name=""options"" id=""option1"" autocomplete=""on"" checked> Gün
                                     </label>
                                     <label class=""btn btn-sm btn-white "">
                                         <input type=""radio"" name=""options"" id=""option2"" autocomplete=""off""> Hafta
@@ -122,14 +186,14 @@ using EntityLayer.Concrete;
                                         <input type=""radio"" name=""options"" id=""option3"" autocomplete=""off""> Ay
                                     </label>
                                 </div>
-                            </div>
+                            </di");
+                WriteLiteral(@"v>
                             <div class=""col-sm-3"">
                                 <div class=""input-group"">
                                     <input placeholder=""Bildirimlerde ara"" type=""text"" class=""form-control form-control-sm""> <span class=""input-group-append"">
                                         <button type=""button"" class=""btn btn-sm btn-primary"">
                                             Ara
-          ");
-                WriteLiteral(@"                              </button>
+                                        </button>
                                     </span>
                                 </div>
 
@@ -144,7 +208,8 @@ using EntityLayer.Concrete;
                                         <th>ID </th>
                                         <th>Bildirim </th>
                                         <th>Bildirim Açıklaması</th>
-                                        <th>Tarihi</th>
+       ");
+                WriteLiteral(@"                                 <th>Tarihi</th>
                                         <th>Action</th>
                                         <th>Düzenle</th>
                                         <th>Durumu Değiştir</th>

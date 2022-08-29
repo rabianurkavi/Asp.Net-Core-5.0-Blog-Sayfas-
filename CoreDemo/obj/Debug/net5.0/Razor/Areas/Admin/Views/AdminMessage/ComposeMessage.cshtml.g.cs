@@ -12,9 +12,25 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\Areas\Admin\Views\_ViewImports.cshtml"
+using CoreDemo.Areas.Admin;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\Areas\Admin\Views\_ViewImports.cshtml"
+using CoreDemo.Areas.Admin.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f1d0fc06476586623c750eb427692790a954a336", @"/Areas/Admin/Views/AdminMessage/ComposeMessage.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b881055197282d0a2ab51004156381e82f1e1fbc", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_AdminMessage_ComposeMessage : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<EntityLayer.Concrete.Message2>
     {
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "post", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         #line hidden
         #pragma warning disable 0649
         private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext __tagHelperExecutionContext;
@@ -36,6 +52,8 @@ namespace AspNetCore
             }
         }
         private global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_BodyTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
@@ -49,7 +67,7 @@ namespace AspNetCore
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f1d0fc06476586623c750eb427692790a954a3363026", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f1d0fc06476586623c750eb427692790a954a3364180", async() => {
                 WriteLiteral(@"
     <div class=""wrapper wrapper-content"">
         <div class=""row"">
@@ -97,10 +115,11 @@ namespace AspNetCore
 
                     <div class=""mail-body"">
 
-                        <form method=""post"">
+                        ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f1d0fc06476586623c750eb427692790a954a3367590", async() => {
+                    WriteLiteral(@"
                             <div class=""form-group row"">
-               ");
-                WriteLiteral(@"                 <label class=""col-sm-2 col-form-label"">Alıcı:</label>
+                                <label class=""col-sm-2 col-form-label"">Alıcı:</label>
 
                                 <div class=""col-sm-10""><input type=""text"" class=""form-control"" ></div>
                             </div>
@@ -108,9 +127,9 @@ namespace AspNetCore
                                 <label class=""col-sm-2 col-form-label"">Konu:</label>
 
                                 <div class=""col-sm-10""><input type=""text"" class=""form-control"" name=""Subject""");
-                BeginWriteAttribute("value", " value=\"", 3720, "\"", 3728, 0);
-                EndWriteAttribute();
-                WriteLiteral(@"/></div>
+                    BeginWriteAttribute("value", " value=\"", 3720, "\"", 3728, 0);
+                    EndWriteAttribute();
+                    WriteLiteral(@"/></div>
                             </div>
                             <div class=""form-group row"">
                                 <label class=""col-sm-2 col-form-label"">Mesajınız:</label>
@@ -118,7 +137,23 @@ namespace AspNetCore
                                <textarea class=""form-control"" name=""MessageDetails"" rows=""4"" cols=""10""></textarea>
                             </div>
                             <button class=""btn btn-primary""><i class=""fa fa-reply""> &nbsp;Gönder</i></button>
-                        </form>
+                        ");
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Method = (string)__tagHelperAttribute_0.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                WriteLiteral(@"
 
                     </div>
 
@@ -126,8 +161,17 @@ namespace AspNetCore
                     </div>
                     <div class=""mail-body text-right tooltip-demo""> 
                         <a href=""/Admin/AdminMessage/InBox/"" class=""btn btn-white btn-sm"" data-toggle=""tooltip"" data-placement=""top"" title=""Mail göndermekten vazgeç""><i class=""fa fa-times""></i> Vazgeç</a>
-                        <a href=""mailbox.html"" class=""btn btn-white btn-sm"" data-toggle=""tooltip"" data-placement=""top"" title=""Taslaklara kayd");
-                WriteLiteral("et\"><i class=\"fa fa-pencil\"></i> Taslak</a>\r\n                    </div>\r\n                    <div class=\"clearfix\"></div>\r\n\r\n\r\n\r\n                </div>\r\n            </div>\r\n        </div>\r\n \r\n");
+                        <a href=""mailbox.html"" class=""btn btn-white btn-sm"" data-toggle=""tooltip"" data-placement=""top"" title=""Taslaklara kaydet""><i class=""fa fa-pencil""></i> Taslak</a>
+                    </div>
+                    <div class=""clearfix""></div>
+
+
+
+                </div>
+            </div>
+        </div>
+ 
+");
                 DefineSection("scripts", async() => {
                     WriteLiteral("\r\n\r\n    ");
                 }
