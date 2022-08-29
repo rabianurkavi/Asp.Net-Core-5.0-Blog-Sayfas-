@@ -11,13 +11,16 @@
         <th>Kullanıcı</th>
         <th>Rol Ata</th>
     </tr>
-    @foreach(var item in Model)
-            {
-                <tr>
-                    <td>@item.UserName</td>
-                    <td><a href="/Admin/AdminRole/AssignRole/@item.Id" class="btn btn-outline-warning">Rol Ata</a></td>
-                </tr>
-            }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.UserName</td>
+            <td><a href="/Admin/AdminRole/AssignRole/@item.Id" class="btn btn-outline-secondary">Rol Ata</a></td>
+        </tr>
+    }
+   
     @section scripts{ }
+
 </table>
-<a href="/Admin/AdminRole/Index" class="btn btn-success">Rol Listesine Dön</a>
+<br />
+<a href="/Admin/AdminRole/Index" class="btn btn-outline-warning">Rol Listesine Dön</a>
