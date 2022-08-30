@@ -6546,6 +6546,16 @@ table.shoping-cart-table tr td:last-child {
   top: -32px;
   right: 0;
 }
+.product-price-se {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #b01c1c;
+    padding: 6px 12px;
+    position: absolute;
+    top: -32px;
+    right: 0;
+}
 .product-detail .ibox-content {
   padding: 30px 30px 50px 30px;
 }

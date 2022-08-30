@@ -1,5 +1,6 @@
 ﻿using CoreDemo.Areas.Admin.Models;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,16 +11,17 @@ using System.Threading.Tasks;
 namespace CoreDemo.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Moderator")]
     public class AdminRole : Controller
     {
         private readonly RoleManager<AppRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
 
-        public AdminRole(RoleManager<AppRole> roleManager,UserManager<AppUser> userManager)
+        public AdminRole(RoleManager<AppRole> roleManager, UserManager<AppUser> userManager)
         {
             _roleManager = roleManager;
             _userManager = userManager;
-            
+
         }
 
         public IActionResult Index()
@@ -27,32 +29,34 @@ namespace CoreDemo.Areas.Admin.Controllers
             var values = _roleManager.Roles.ToList();
             return View(values);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult AddRole()
-        { 
+        {
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> AddRole(RoleViewModel viewModel)
         {
-           if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 AppRole role = new AppRole
                 {
                     Name = viewModel.RoleName
                 };
                 var result = await _roleManager.CreateAsync(role);
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
                     return RedirectToAction("Index");
                 }
-                foreach(var item in result.Errors)
+                foreach (var item in result.Errors)
                 {
                     ModelState.AddModelError("", item.Description);
                 }
             }
             return View(viewModel);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult EditRole(int id)
         {
@@ -70,17 +74,18 @@ namespace CoreDemo.Areas.Admin.Controllers
             var values = _roleManager.Roles.Where(x => x.Id == viewModel.Id).FirstOrDefault();
             values.Name = viewModel.RoleName;
             var result = await _roleManager.UpdateAsync(values);
-           
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index");
-                }
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-                }
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index");
+            }
+            foreach (var item in result.Errors)
+            {
+                ModelState.AddModelError("", item.Description);
+            }
             return View(viewModel);
         }
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteRole(int id)
         {
             var values = _roleManager.Roles.FirstOrDefault(x => x.Id == id);
@@ -101,15 +106,16 @@ namespace CoreDemo.Areas.Admin.Controllers
             return View(values);
 
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> AssignRole(int id)
         {
-            var user = _userManager.Users.FirstOrDefault(x=>x.Id==id);
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
             var roles = _roleManager.Roles.ToList();
             TempData["Userid"] = user.Id;
             var userRoles = await _userManager.GetRolesAsync(user);
             List<RoleAssignViewModel> model = new List<RoleAssignViewModel>();
-            foreach(var item in roles)
+            foreach (var item in roles)
             {
                 RoleAssignViewModel m = new RoleAssignViewModel();
                 m.RoleID = item.Id;
@@ -120,14 +126,15 @@ namespace CoreDemo.Areas.Admin.Controllers
             return View(model);
 
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AssignRole(List<RoleAssignViewModel> model)
         {
             var userid = (int)TempData["UserId"];
             var user = _userManager.Users.FirstOrDefault(x => x.Id == userid);
-            foreach(var item in model)
+            foreach (var item in model)
             {
-                if(item.Exists)
+                if (item.Exists)
                 {
                     await _userManager.AddToRoleAsync(user, item.Name);
                 }

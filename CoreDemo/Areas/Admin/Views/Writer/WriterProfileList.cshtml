@@ -6,62 +6,56 @@
 }
 <!DOCTYPE html>
 <html>
-
 <body>
-
-
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="ibox ">
-                    <div class="ibox-content">
-                        <div class="table-responsive">
-                            <table  class="table table-striped">
-                                <thead>
-                                    <tr>
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
 
-                                        <th>Yazar Id</th>
-                                        <th>Yazar Adı </th>
-                                        <th>Yazar Görseli </th>
-                                        <th>Yazar Maili</th>
-                                        <th>Yazar Hakkında</th>
-                                        <th>Yazar Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                    <tr>
-                                        <td>@item.WriterId</td>
-                                        <td>@item.WriterName</td>
-                                        <td><img src="@item.WriterImage" class="rounded-circle" height="30" width="30" /></td>
-                                        <td>@item.WriterMail</td>
-                                        <td>
-                                            @item.WriterAbout
-                                        </td>
-                                        @if (item.WriterStatus == true)
-                                        {
-                                            <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
-                                        }
-                                        else if (item.WriterStatus == false)
-                                        {
-                                           
-                                            <td><a href="#"> <font color="red"><i class="fa fa-close "></i></font></a></td>
-                                        }
-                                    </tr>
-                                    }
-                                </tbody>
-                            </table>
+
+                            <img class="rounded-circle" src="@item.WriterImage" height="180" width="180" />
+
+                            <div class="product-desc">
+
+                                @if (item.WriterStatus == true)
+                                {
+                                    <font color="red">
+                                        <span class="product-price">
+                                            <a href="#"><font color="white"><i class="fa fa-check"> Aktif </i></font></a>
+
+                                        </span>
+                                    </font>
+                                }
+                                else if (item.WriterStatus == false)
+                                {
+                                    <font color="red">
+                                        <span class="product-price">
+                                            <a href="#"><font color="red"><i class="fa fa-close"> Aktif Değil</i></font></a>
+
+                                        </span>
+                                    </font>
+                                }
+
+                                <small class="text-muted">@item.WriterMail</small>
+                                <a href="#" class="product-name"> @item.WriterName</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    @item.WriterAbout
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
-            </div>
-
+            }
         </div>
+
     </div>
     @section scripts{ }
-
 </body>
 
 </html>

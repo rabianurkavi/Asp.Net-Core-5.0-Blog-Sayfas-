@@ -9,10 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using EntityLayer.Concrete;
 using DataAccessLayer.Concrete.Context;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CoreDemo.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Moderator")]
     public class WriterController : Controller
     {
         WriterManager writerManager = new WriterManager(new EfWriterDal());
