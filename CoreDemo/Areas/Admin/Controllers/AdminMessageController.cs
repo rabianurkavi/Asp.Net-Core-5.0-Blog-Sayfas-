@@ -23,6 +23,11 @@ namespace CoreDemo.Areas.Admin.Controllers
             var userMail = context.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
             var writerId = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
             var values = message2Manager.GetInboxListByWriter(writerId);
+            var valuesSend = message2Manager.GetSendBoxListByWriter(writerId).Count();
+            var messageTotal = message2Manager.GetInboxListByWriter(writerId).Count();
+            ViewBag.messageTotal = messageTotal;
+            ViewBag.messageSendTotal = valuesSend;
+
             return View(values);
         }
         public IActionResult SendBox()
@@ -31,6 +36,10 @@ namespace CoreDemo.Areas.Admin.Controllers
             var userMail = context.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
             var writerId = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
             var values = message2Manager.GetSendBoxListByWriter(writerId);
+            var messageTotal= message2Manager.GetSendBoxListByWriter(writerId).Count();
+            var messageInboxTotal = message2Manager.GetInboxListByWriter(writerId).Count();
+            ViewBag.messageSendTotal = messageTotal;
+            ViewBag.messageInboxTotal = messageInboxTotal;
             return View(values);
         }
         [HttpGet]

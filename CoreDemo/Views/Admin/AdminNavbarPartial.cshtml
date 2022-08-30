@@ -3,20 +3,7 @@
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
-                <div class="dropdown profile-element">
-                    <img alt="image" width="60" height="70" class="rounded-circle" src="/admin/img/rabia2.jpg" />
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="block m-t-xs font-bold">Rabia Nur Kavi</span>
-                        <span class="text-muted text-xs block">Yazılım Mühendisi <b class="caret"></b></span>
-                    </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a class="dropdown-item" href="~/admin/profile.html">Profile</a></li>
-                        <li><a class="dropdown-item" href="~/admin/contacts.html">Contacts</a></li>
-                        <li><a class="dropdown-item" href="~/admin/mailbox.html">Mailbox</a></li>
-                        <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="login.html">Logout</a></li>
-                    </ul>
-                </div>
+                @await Component.InvokeAsync("AdminViewProfile")
                 <div class="logo-element">
                     IN+
                 </div>
@@ -28,7 +15,7 @@
                 <a href="/Admin/Chart/Index/"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrikler</span>  </a>
             </li>
             <li>
-                <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mesajlar </span><span class="label label-warning float-right">0/0</span></a>
+                <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mesajlar </span>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="/Admin/AdminMessage/InBox/">Gelen Kutusu</a></li>
                     <li><a href="/Admin/AdminMessage/SendBox">Giden Kutusu</a></li>

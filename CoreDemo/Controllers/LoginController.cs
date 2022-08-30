@@ -50,6 +50,10 @@ namespace CoreDemo.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index","Login");
         }
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
         //[HttpPost]
         //public async Task<ActionResult> Index(Writer writer)
         //{
