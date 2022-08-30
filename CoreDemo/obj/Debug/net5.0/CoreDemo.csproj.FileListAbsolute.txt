@@ -254,3 +254,4 @@ C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\A
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Login\AccessDenied.cshtml.g.cs
 C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\AdminViewProfile\Default.cshtml.g.cs
+C:\Users\Rabia Nur\source\repos\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminMessage\MessageDetail.cshtml.g.cs

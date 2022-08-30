@@ -28,5 +28,13 @@ namespace DataAccessLayer.EntityFramework
                 return context.Message2s.Include(x => x.ReceiverUser).Where(x => x.SenderID == id).ToList();
             }
         }
+        public Message2 GetWriterNameWithId(int id)
+        {
+            using (var context = new Context())
+            {
+                return context.Message2s.Include(x => x.SenderUser).Where(x => x.MessageID == id).FirstOrDefault();
+            }
+        }
+       
     }
 }

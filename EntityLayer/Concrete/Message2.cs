@@ -11,8 +11,8 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int MessageID { get; set; }
-        public int? SenderID { get; set; }
-        public int? ReceiverID { get; set; }
+        public int SenderID { get; set; }
+        public int ReceiverID { get; set; }
         public string Subject { get; set; }
         public DateTime MessageDate { get; set; }
         public string MessageDetails { get; set; }

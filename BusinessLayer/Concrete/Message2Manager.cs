@@ -20,6 +20,10 @@ namespace BusinessLayer.Concrete
         {
             return _messageDal.Get(x => x.MessageID == id);
         }
+        public Message2 GetWriterNameWithId(int id)
+        {
+            return _messageDal.GetWriterNameWithId(id);
+        }
 
         public List<Message2> GetList()
         {
@@ -50,7 +54,6 @@ namespace BusinessLayer.Concrete
         {
             return _messageDal.GetInboxListWithMessageByWriter(id);
         }
-
         public List<Message2> GetSendBoxListByWriter(int id)
         {
             return _messageDal.GetSendBoxWithMessageByWriter(id);

@@ -60,5 +60,25 @@ namespace CoreDemo.Areas.Admin.Controllers
             message2Manager.TAdd(message2);
             return RedirectToAction("SendBox");
         }
+        public IActionResult MessageDetail(int id)
+        {
+            
+
+            var userName = User.Identity.Name;
+            var userMail = context.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
+            var writerId = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
+            var messageTotal = message2Manager.GetSendBoxListByWriter(writerId).Count();
+            var messageInboxTotal = message2Manager.GetInboxListByWriter(writerId).Count();
+           
+            ViewBag.messageSendTotal = messageTotal;
+            ViewBag.messageInboxTotal = messageInboxTotal;
+
+            
+            var messageIdd = message2Manager.GetById(id);
+            int receiverId = messageIdd.ReceiverID;
+            //hatalı
+            var messageId = message2Manager.GetInboxListByWriter(id);
+            return View(messageIdd);
+        }
     }
 }
