@@ -62,7 +62,14 @@ namespace CoreDemo.Areas.Admin.Controllers
         }
         public IActionResult MessageDetail(int id)
         {
-            
+            var query = from message in context.Message2s
+                        join writer in context.Writers
+                        on message.SenderID equals writer.WriterId
+                        where message.MessageID == id
+                        select new { writer.WriterMail };
+            var queryData = query.SingleOrDefault();
+
+
 
             var userName = User.Identity.Name;
             var userMail = context.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
@@ -74,11 +81,12 @@ namespace CoreDemo.Areas.Admin.Controllers
             ViewBag.messageInboxTotal = messageInboxTotal;
 
             
-            var messageIdd = message2Manager.GetById(id);
-            int receiverId = messageIdd.ReceiverID;
+            var messageId = message2Manager.GetById(id);
+            //int receiverId = messageIdd.ReceiverID;
             //hatalı
-            var messageId = message2Manager.GetInboxListByWriter(id);
-            return View(messageIdd);
+            //var messageId = message2Manager.GetInboxListByWriter(id);
+            ViewBag.vtc = queryData;
+            return View(messageId);
         }
     }
 }
