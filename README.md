@@ -21,6 +21,7 @@ mesaj işlemleri mevcuttur. Kullanıcı girişimiz authentication ile sağlanmı
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.10-adminwriterlist.png)
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.11-adminnotficationindex.png)
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.12-excel%20ile%20rapor%20%C3%A7%C4%B1kartma.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.15comment.png)
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.13-403accessdenied.png)
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.14-message%C4%B1nbox.png)
 **                       KULLANICI GİRİŞ-KULLANICI KAYIT**
