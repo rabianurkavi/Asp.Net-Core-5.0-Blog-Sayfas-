@@ -45,6 +45,14 @@ namespace CoreDemo.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult ComposeMessage()
         {
+            var userName = User.Identity.Name;
+            var userMail = context.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
+            var writerId = context.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
+            var messageTotal = message2Manager.GetSendBoxListByWriter(writerId).Count();
+            var messageInboxTotal = message2Manager.GetInboxListByWriter(writerId).Count();
+
+            ViewBag.messageSendTotal = messageTotal;
+            ViewBag.messageInboxTotal = messageInboxTotal;
             return View();
         }
         [HttpPost]
@@ -85,7 +93,7 @@ namespace CoreDemo.Areas.Admin.Controllers
             //int receiverId = messageIdd.ReceiverID;
             //hatalı
             //var messageId = message2Manager.GetInboxListByWriter(id);
-            ViewBag.vtc = queryData;
+            ViewBag.vtc = queryData.WriterMail;
             return View(messageId);
         }
     }

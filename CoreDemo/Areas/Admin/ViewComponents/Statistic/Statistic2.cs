@@ -14,6 +14,7 @@ namespace CoreDemo.Areas.Admin.ViewComponents.Statistic
         {
             ViewBag.v1 = context.Blogs.OrderByDescending(x => x.BlogId).Select(x => x.BlogTitle).Take(1).FirstOrDefault();
             ViewBag.v2 = context.Blogs.OrderByDescending(x => x.BlogId).Select(x => x.Writer.WriterName).Take(1).FirstOrDefault();
+            
             return View();
         }
     }
