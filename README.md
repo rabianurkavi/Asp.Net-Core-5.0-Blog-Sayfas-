@@ -5,6 +5,10 @@
 mesaj işlemleri mevcuttur. Kullanıcı girişimiz authentication ile sağlanmış olup gerekli yerlere authorize attiributeleri eklenmiştir.Hashleme ve saltlama algoritmalarıyla veri tabanı güvenliği sağlanmıştır.** <br/>
 *Katmanlı Mimari yapısı ve SOLID prensibi kullanılmıştır.*  <br/>
 *Identity Kütüphanesi ile yazar işlemleri sağlanmıştır*  <br/>
+*Json Web Token*  <br/>
+*Authorize ve Authentication İşlemleri*  <br/>
+*Async ve sync kullanımlar*  <br/>
+*Ajax Kullanımı*  <br/>
 *ViewComponentlerle dinamik*  <br/>
 *ASP .NET CORE 5.0 kullanarak geliştirilmiştir.*  <br/>
                          Admin 
