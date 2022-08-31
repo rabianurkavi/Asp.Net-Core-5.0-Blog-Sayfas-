@@ -7,6 +7,22 @@ mesaj işlemleri mevcuttur. Kullanıcı girişimiz authentication ile sağlanmı
 *Identity Kütüphanesi ile yazar işlemleri sağlanmıştır*  <br/>
 *ViewComponentlerle dinamik*  <br/>
 *ASP .NET CORE 5.0 kullanarak geliştirilmiştir.*  <br/>
+                         Admin 
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1-AdminWidgetIndex.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.1-admim.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.2admin.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.3-adminchart.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.4-admin%C4%B1nbox.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.5-adminmmessagedetail.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.6-Kategorilist.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.7-Kullan%C4%B1c%C4%B1rollistesi.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.8-Rol%20verme.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.9-adminbloglist.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.10-adminwriterlist.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.11-adminnotficationindex.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.12-excel%20ile%20rapor%20%C3%A7%C4%B1kartma.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.13-403accessdenied.png)
+![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/1.14-message%C4%B1nbox.png)
 **                       KULLANICI GİRİŞ-KULLANICI KAYIT**
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/login.png)
 ![Arayüz](https://github.com/rabianur412/CoreDemo/blob/main/CoreDemo/wwwroot/github/register.png)
