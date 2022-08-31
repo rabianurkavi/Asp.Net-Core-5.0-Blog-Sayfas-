@@ -59,7 +59,7 @@ namespace Jwt_Core_Project_Camp
             }
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
